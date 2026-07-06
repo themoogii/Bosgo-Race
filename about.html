@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>About Beyond Race | Concept, Vision and 7K Club</title>
+
+    <!--Metatags-->
+    <meta name="author" content="Beyond Race" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Learn the concept and vision behind Beyond Race, the team behind it and the 7K Club community shaping the experience." />
+    <meta name="language" content="English" />
+    <link rel="canonical" href="about.html" />
+
+    <meta property="og:title" content="About Beyond Race | Concept, Vision and 7K Club" />
+    <meta property="og:description" content="Learn the concept and vision behind Beyond Race, the team behind it and the 7K Club community shaping the experience." />
+    <meta property="og:url" content="about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/beyond-favicon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Learn the concept and vision behind Beyond Race, the team behind it and the 7K Club community shaping the experience." />
+    <meta name="twitter:title" content="About Beyond Race | Concept, Vision and 7K Club" />
+    <meta name="twitter:image" content="assets/beyond-favicon.png" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" type="text/css"  />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" type="text/css"  />
+<link href="https://piranhabar.ie/themes/dist/web.min.css?20260601v2" rel="stylesheet" type="text/css"  />
+<style>
+    .content_menu {
+        transform: translateX(0) !important;
+    }
+
+    .btn_burger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn_burger::before {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: transparent;
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        z-index: 0;
+        transition: all 0.35s ease-in-out;
+    }
+
+    .btn_burger::after {
+        content: "";
+        width: 34px;
+        height: 34px;
+        display: block;
+        position: relative;
+        z-index: 1;
+        background: url("assets/7k-symbol-black.svg") center / contain no-repeat;
+        transform: none;
+        transition: all 0.35s ease-in-out;
+    }
+
+    .content_menu.open .btn_burger::after {
+        content: "×";
+        width: auto;
+        height: auto;
+        background: none;
+        color: var(--black);
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 0.9;
+        transform: skewX(-14deg);
+    }
+
+    .btn_burger .lottie-box:empty {
+        display: none;
+    }
+
+    .btn_burger .lottie-box:not(:empty) {
+        z-index: 2;
+    }
+
+
+    .logo {
+        display: block !important;
+        width: clamp(132px, 14vw, 230px) !important;
+        height: clamp(70px, 7.4vw, 122px) !important;
+        overflow: visible !important;
+    }
+
+    .logo .site-logo-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: none;
+        transform-origin: center;
+    }
+
+    nav.content_menu > a.logo {
+        width: 58px !important;
+        height: 31px !important;
+        position: relative !important;
+        overflow: visible !important;
+        transform: none !important;
+    }
+
+    nav.content_menu > a.logo .site-logo-image {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: none !important;
+        object-fit: contain !important;
+    }
+
+    nav.content_menu > a.logo::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        width: 58px !important;
+        height: 31px !important;
+        background: url("assets/beyond-navbar-logo.png") center / contain no-repeat !important;
+        transform: translateX(-50%) !important;
+        pointer-events: none !important;
+    }
+
+    @media (max-width: 760px) {
+        .logo,
+        nav.content_menu > a.logo {
+            width: 104px !important;
+            height: 55px !important;
+            left: 50% !important;
+            right: auto !important;
+            transform: translateX(-50%) !important;
+        }
+
+        .btn_burger {
+            display: none !important;
+        }
+
+        .logo .site-logo-image {
+            transform: none !important;
+            object-fit: contain;
+        }
+
+        nav.content_menu > a.logo::before {
+            left: 50% !important;
+            width: 104px !important;
+            height: 55px !important;
+            transform: translateX(-50%) !important;
+            background-position: center !important;
+        }
+    }
+
+    @media (max-width: 900px) and (max-height: 620px) {
+        .logo,
+        nav.content_menu > a.logo {
+            width: 104px !important;
+            height: 55px !important;
+            left: 50% !important;
+            right: auto !important;
+            transform: translateX(-50%) !important;
+        }
+
+        .btn_burger {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        .btn_burger::before,
+        .btn_burger::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+        }
+
+        .logo .site-logo-image {
+            transform: none !important;
+            object-fit: contain;
+        }
+
+        nav.content_menu > a.logo::before {
+            left: 50% !important;
+            width: 104px !important;
+            height: 55px !important;
+            transform: translateX(-50%) !important;
+            background-position: center !important;
+        }
+    }
+
+    footer .logo-word {
+        width: 100%;
+        min-height: clamp(80px, 14vw, 180px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    footer.row,
+    footer.row article {
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    footer.row {
+        padding-bottom: 28px !important;
+    }
+
+    footer .content_contact {
+        margin-bottom: 0 !important;
+        padding-bottom: 28px !important;
+    }
+
+    footer .logo-word {
+        display: none !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+    }
+
+    footer .content_bottom {
+        position: static !important;
+        margin-top: 0 !important;
+        padding-top: 24px !important;
+    }
+
+    footer .logo-word .video-hover {
+        display: none;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 3;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        -webkit-mask-image: url("assets/big_logo_white.png");
+        mask-image: url("assets/big_logo_white.png");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+    }
+
+    .content_by {
+        display: none !important;
+    }
+
+    .content_social li:first-child svg {
+        display: none;
+    }
+
+    .content_social li:first-child img {
+        width: 23px;
+        height: 23px;
+        display: block;
+        object-fit: contain;
+    }
+
+    .content_social li:last-child img {
+        width: 23px;
+        height: 23px;
+        display: block;
+        object-fit: contain;
+    }
+
+    .content_social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content_social a img,
+    .content_social a svg {
+        transform-origin: center;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .content_social a:hover img,
+    .content_social a:focus-visible img,
+    .content_social a:hover svg,
+    .content_social a:focus-visible svg {
+        opacity: 0.72;
+        transform: translateY(-3px) scale(1.08);
+    }
+
+    footer .content_contact svg {
+        display: none;
+    }
+
+    footer .logo-word::before {
+        content: "BEYOND";
+        color: var(--white);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(72px, 20vw, 280px);
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: 0;
+    }
+
+    .content_big_navigation .content_links > .item {
+        opacity: 0;
+        transform: translateY(0.2em);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+        transition-delay: 0s;
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item:nth-child(1) {
+        transition-delay: 0.06s;
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item:nth-child(2) {
+        transition-delay: 0.12s;
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item:nth-child(3) {
+        transition-delay: 0.18s;
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item:nth-child(4) {
+        transition-delay: 0.24s;
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item:nth-child(5) {
+        transition-delay: 0.30s;
+    }
+
+    .content_marquee.club-album .content_headings p {
+        max-width: 880px;
+        margin-top: 20px;
+        font-size: clamp(20px, 2.4vw, 34px);
+        line-height: 1.12;
+    }
+
+    .content_marquee.club-album .simple-marquee-container:first-of-type {
+        margin-top: 46px;
+    }
+    .content_menu.open .content_big_navigation .content_links > .item > .link {
+        color: var(--black) !important;
+    }
+
+    .content_menu.open .content_big_navigation .content_links > .item.is-current > .link {
+        color: var(--white) !important;
+    }
+
+    main.enter-page .entry-form-section,
+    main.race-day-page .race-map-section {
+        background: var(--black);
+        color: var(--white);
+    }
+
+    main.enter-page .entry-form-section h3,
+    main.race-day-page .race-map-section h3,
+    main.race-day-page .race-map-section h4,
+    main.race-day-page .race-map-section h5 {
+        color: var(--white);
+    }
+
+    .entry-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .entry-form label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .entry-form input,
+    .entry-form select,
+    .entry-form textarea {
+        width: 100%;
+        border: 1px solid var(--white-03);
+        background: transparent;
+        color: var(--white);
+        padding: 16px;
+        font: inherit;
+        border-radius: 0;
+    }
+
+    .entry-form textarea,
+    .entry-form .full {
+        grid-column: 1 / -1;
+    }
+
+    .entry-form button {
+        justify-self: start;
+        border: 1px solid var(--white);
+        background: var(--white);
+        color: var(--black);
+        padding: 18px 28px;
+        font: inherit;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .race-map {
+        position: relative;
+        width: min(980px, 100%);
+        aspect-ratio: 16 / 9;
+        margin-top: 42px;
+        border: 1px solid var(--white-03);
+        overflow: hidden;
+        background: linear-gradient(135deg, #050505 0%, #171717 48%, #050505 100%);
+    }
+
+    .race-map::before,
+    .race-map::after {
+        content: "";
+        position: absolute;
+        border: 2px solid var(--white);
+        border-left: 0;
+        border-bottom: 0;
+        opacity: 0.8;
+        transform: rotate(-14deg);
+    }
+
+    .race-map::before {
+        width: 68%;
+        height: 46%;
+        left: 9%;
+        top: 22%;
+        border-radius: 50% 40% 50% 30%;
+    }
+
+    .race-map::after {
+        width: 44%;
+        height: 28%;
+        right: 10%;
+        bottom: 18%;
+        border-radius: 40% 55% 35% 45%;
+    }
+
+    .map-point {
+        position: absolute;
+        display: grid;
+        gap: 6px;
+        max-width: 180px;
+        color: var(--white);
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+
+    .map-point::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--custom-red);
+        box-shadow: 0 0 0 8px rgba(235, 42, 36, 0.22);
+    }
+
+    .map-point.stage-one { left: 18%; top: 24%; }
+    .map-point.stage-two { right: 18%; bottom: 22%; }
+
+    @media (max-width: 760px) {
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .entry-form { grid-template-columns: 1fr; }
+
+        .content_big_button .big_button span {
+            font-size: clamp(28px, 8vw, 40px) !important;
+            line-height: 1.05 !important;
+            white-space: normal !important;
+            text-align: center !important;
+            overflow-wrap: break-word !important;
+        }
+
+        footer .content_contact .content_w {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+        }
+
+        footer .content_contact a,
+        footer .content_contact span {
+            overflow-wrap: anywhere;
+        }
+    }
+
+
+    .curtain.beyond-loader-active {
+        position: fixed !important;
+        inset: 0 !important;
+        display: block !important;
+        pointer-events: auto !important;
+        z-index: 99999 !important;
+        overflow: hidden !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: opacity 0.35s ease, visibility 0.35s ease !important;
+    }
+
+    .curtain.beyond-loader-active .wave {
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 25.1% !important;
+        background: var(--custom-red, #EB2A24) !important;
+        transform: translateY(0) !important;
+        transition: transform 0.72s cubic-bezier(0.76, 0, 0.24, 1) !important;
+        will-change: transform !important;
+    }
+
+    .curtain.beyond-loader-active .wave:nth-child(1) { left: 0; transition-delay: 0s !important; }
+    .curtain.beyond-loader-active .wave:nth-child(2) { left: 25%; transition-delay: 0.06s !important; }
+    .curtain.beyond-loader-active .wave:nth-child(3) { left: 50%; transition-delay: 0.12s !important; }
+    .curtain.beyond-loader-active .wave:nth-child(4) { left: 75%; transition-delay: 0.18s !important; }
+
+    .curtain.beyond-loader-active.is-exiting .wave {
+        transform: translateY(-101%) !important;
+    }
+
+    .curtain.beyond-loader-active.is-hidden {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    .curtain.beyond-loader-active .loading_bar {
+        position: fixed !important;
+        top: 24px !important;
+        right: 24px !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: 200px !important;
+        height: 2px !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        z-index: 2 !important;
+        overflow: hidden !important;
+    }
+
+    .curtain.beyond-loader-active .loading_fill {
+        display: block !important;
+        width: 0 !important;
+        height: 100% !important;
+        background: var(--black, #000) !important;
+        transition: width 0.9s cubic-bezier(0.76, 0, 0.24, 1) !important;
+    }
+
+    .curtain.beyond-loader-active.is-loaded .loading_fill {
+        width: 100% !important;
+    }
+
+    @media (max-width: 760px) {
+        .curtain.beyond-loader-active .loading_bar {
+            top: 18px !important;
+            right: 18px !important;
+            width: 132px !important;
+        }
+    }
+
+</style>
+<script type="text/javascript">
+    const webPath = "https://piranhabar.ie/";
+    const appPath = "https://piranhabar.ie/";
+    const spkVersion="";
+    const spkMemUsage = "";
+</script>
+    <meta name="theme-color" content="#AD0702">
+
+
+    <!--Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+
+    <!--Favicon-->
+    <link href="assets/beyond-favicon.png" rel="shortcut icon" />
+    <link href="assets/beyond-favicon.png" rel="icon" type="image/png" />
+    <script>
+        const langTxt = JSON.parse('{"msgInvalidTitle":"Warning!","msgGenericErrorMsg":"An error ocurred while processing the information.","msgOkTitle":"Done!","labelLoginAction":"Login in..."}');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KV85T9BW');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV85T9BW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="curtain " id="curtain">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave">
+        <!--Loading Bar-->
+        <div class="loading_bar">
+            <span class="loading_fill"></span>
+        </div>
+    </div>
+</div>
+
+<!--Menu-->
+<nav class="content_menu" id="contentMenu">
+    <!--Burger-->
+    <a href="javascript:void(0)" class="btn_burger">
+        <div class="lottie-box logo_to_burger"></div>
+        <div class="lottie-box burger_to_x"></div>
+        <div class="lottie-box x_to_logo"></div>
+    </a>
+    <a href="javascript:void(0)" class="btn_burger_mobile" id="btnBurgerHidden">
+        <span>Open/Close</span>
+    </a>
+    <!--Logo-->
+    <a href="index.html" class="logo">
+        <img src="assets/beyond-navbar-logo.png" alt="Beyond" class="site-logo-image" />
+    </a>
+
+    <!--Social-->
+    <ul class="content_social">
+        <li>
+            <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g clip-path="url(#clip0_1010_366)">
+                        <path d="M21.7896 0.751953H2.19023C1.25137 0.751953 0.492188 1.49316 0.492188 2.40957V22.0898C0.492188 23.0063 1.25137 23.752 2.19023 23.752H21.7896C22.7285 23.752 23.4922 23.0063 23.4922 22.0943V2.40957C23.4922 1.49316 22.7285 0.751953 21.7896 0.751953ZM7.31582 20.3514H3.90176V9.37246H7.31582V20.3514ZM5.60879 7.87656C4.5127 7.87656 3.62773 6.9916 3.62773 5.9C3.62773 4.8084 4.5127 3.92344 5.60879 3.92344C6.70039 3.92344 7.58535 4.8084 7.58535 5.9C7.58535 6.98711 6.70039 7.87656 5.60879 7.87656ZM20.0916 20.3514H16.682V15.0146C16.682 13.7434 16.6596 12.1037 14.9076 12.1037C13.1332 12.1037 12.8637 13.4918 12.8637 14.9248V20.3514H9.45859V9.37246H12.7289V10.8729H12.7738C13.2275 10.0104 14.3416 9.09844 15.9992 9.09844C19.4537 9.09844 20.0916 11.3715 20.0916 14.3273V20.3514Z" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1010_366">
+                            <rect width="23" height="23" fill="white" transform="translate(0.492188 0.751953)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+                    <g clip-path="url(#clip0_1010_359)">
+                        <path d="M11.4922 1.88691C14.4313 1.88691 14.7793 1.89922 15.9352 1.94844C17.0094 1.99355 17.5895 2.16582 17.9762 2.30938C18.4875 2.49805 18.857 2.72773 19.2395 3.09277C19.6262 3.46191 19.8625 3.81055 20.0602 4.29863C20.2105 4.66777 20.391 5.22559 20.4383 6.24687C20.4898 7.3543 20.5027 7.68652 20.5027 10.4879C20.5027 13.2934 20.4898 13.6256 20.4383 14.7289C20.391 15.7543 20.2105 16.308 20.0602 16.6772C19.8625 17.1652 19.6219 17.518 19.2395 17.883C18.8527 18.2521 18.4875 18.4777 17.9762 18.6664C17.5895 18.81 17.0051 18.9822 15.9352 19.0273C14.775 19.0766 14.427 19.0889 11.4922 19.0889C8.55313 19.0889 8.20508 19.0766 7.04922 19.0273C5.975 18.9822 5.39492 18.81 5.0082 18.6664C4.49688 18.4777 4.12734 18.248 3.74492 17.883C3.3582 17.5139 3.12188 17.1652 2.92422 16.6772C2.77383 16.308 2.59336 15.7502 2.54609 14.7289C2.49453 13.6215 2.48164 13.2893 2.48164 10.4879C2.48164 7.68242 2.49453 7.35019 2.54609 6.24687C2.59336 5.22148 2.77383 4.66777 2.92422 4.29863C3.12188 3.81055 3.3625 3.45781 3.74492 3.09277C4.13164 2.72363 4.49688 2.49805 5.0082 2.30938C5.39492 2.16582 5.9793 1.99355 7.04922 1.94844C8.20508 1.89922 8.55313 1.88691 11.4922 1.88691ZM11.4922 -0.00390625C8.50586 -0.00390625 8.13203 0.00839844 6.95898 0.0576172C5.79023 0.106836 4.98672 0.287305 4.29063 0.545703C3.56445 0.816406 2.95 1.17324 2.33984 1.75977C1.72539 2.34219 1.35156 2.92871 1.06797 3.61777C0.797266 4.28633 0.608203 5.04922 0.556641 6.16484C0.505078 7.28867 0.492188 7.64551 0.492188 10.4961C0.492188 13.3467 0.505078 13.7035 0.556641 14.8232C0.608203 15.9389 0.797266 16.7059 1.06797 17.3703C1.35156 18.0635 1.72539 18.65 2.33984 19.2324C2.95 19.8148 3.56445 20.1758 4.28633 20.4424C4.98672 20.7008 5.78594 20.8812 6.95469 20.9305C8.12773 20.9797 8.50156 20.992 11.4879 20.992C14.4742 20.992 14.848 20.9797 16.0211 20.9305C17.1898 20.8812 17.9934 20.7008 18.6895 20.4424C19.4113 20.1758 20.0258 19.8148 20.6359 19.2324C21.2461 18.65 21.6242 18.0635 21.9035 17.3744C22.1742 16.7059 22.3633 15.943 22.4148 14.8273C22.4664 13.7076 22.4793 13.3508 22.4793 10.5002C22.4793 7.64961 22.4664 7.29277 22.4148 6.17305C22.3633 5.05742 22.1742 4.29043 21.9035 3.62598C21.6328 2.92871 21.259 2.34219 20.6445 1.75977C20.0344 1.17734 19.4199 0.816406 18.698 0.549805C17.9977 0.291406 17.1984 0.110938 16.0297 0.0617188C14.8523 0.00839844 14.4785 -0.00390625 11.4922 -0.00390625Z"/>
+                        <path d="M11.4922 5.10156C8.37266 5.10156 5.8418 7.51738 5.8418 10.4951C5.8418 13.4729 8.37266 15.8887 11.4922 15.8887C14.6117 15.8887 17.1426 13.4729 17.1426 10.4951C17.1426 7.51738 14.6117 5.10156 11.4922 5.10156ZM11.4922 13.9937C9.46836 13.9937 7.82695 12.427 7.82695 10.4951C7.82695 8.56328 9.46836 6.99648 11.4922 6.99648C13.516 6.99648 15.1574 8.56328 15.1574 10.4951C15.1574 12.427 13.516 13.9937 11.4922 13.9937Z" />
+                        <path d="M18.6852 4.89004C18.6852 5.58731 18.0922 6.14922 17.366 6.14922C16.6355 6.14922 16.0469 5.58321 16.0469 4.89004C16.0469 4.19277 16.6398 3.63086 17.366 3.63086C18.0922 3.63086 18.6852 4.19688 18.6852 4.89004Z" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1010_359">
+                            <rect width="22" height="21" fill="white" transform="translate(0.492188 -0.00390625)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                    <path d="M19.1816 0.0722656C21.0029 0.0723976 22.4794 1.54882 22.4795 3.37012V18.7617C22.4794 20.583 21.0029 22.0594 19.1816 22.0596H3.79004C1.96874 22.0594 0.492319 20.583 0.492188 18.7617V3.37012C0.49232 1.54882 1.96874 0.0723977 3.79004 0.0722656H19.1816ZM18.4424 8.01855C19.2583 3.33784 12.8603 4.32501 12.1299 8.4043C13.8474 7.37396 14.7922 8.83409 13.8906 10.4229C13.0317 12.0977 12.2156 13.1289 11.7861 13.1289C11.3997 13.1286 11.0993 12.0543 10.627 10.1221C10.1117 8.1895 10.111 4.62528 8.09277 5.05469C6.17071 5.39662 3.65393 8.41486 3.62695 8.44727L4.18555 9.26367C4.20314 9.24964 5.47651 8.23634 5.86035 8.74805C6.28979 9.26337 7.87823 15.1901 8.39355 16.3066C8.86595 17.2084 10.1542 18.4963 11.5283 17.5947C12.9454 16.6929 17.6263 12.6993 18.4424 8.01855Z" />
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <!--Big Navigation-->
+    <section class="content_big_navigation">
+        <!--Links-->
+        <ul class="row content_links">
+            <!--Item-->
+            <li class="row item" id="enterMenu">
+                <a href="register.html" class="link">
+                    Enter
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
+                </a>
+            </li>
+            <!--Item-->
+            <li class="row item" id="raceDayMenu">
+                <a href="race-day.html" class="link">
+                    Race day
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
+                </a>
+            </li>
+            <!--Item-->
+            <li class="row item" id="aboutMenu">
+                <a href="about.html" class="link">
+                    About
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
+                </a>
+            </li>
+            <!--Item-->
+            <li class="row item" id="contactMenu">
+                <a href="contact.html" class="link">
+                    Partners
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
+                </a>
+            </li>
+            <!--Item-->
+            <li class="row item" id="shopMenu">
+                <a href="https://www.the7k.club/shop" class="link" target="_blank" rel="noopener">
+                    Shop
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
+                </a>
+            </li>
+        </ul>
+        <!--Contact-->
+        <div class="row content_contact">
+            <!--Drop In-->
+            <div>
+                <!--Heading-->
+                <h4>Race location:</h4>
+                <!--Information-->
+                <span>Race location</span>
+                <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+            </div>
+            <!--Get in touch-->
+            <div>
+                <!--Heading-->
+                <h4>Contact:</h4>
+                <!--Information-->
+                <a class="link" href="tel:+97680792969">+976 8079 2969</a>
+                <a class="link" href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
+            </div>
+        </div>
+    </section>
+</nav>
+
+<!--Main-->
+<main class="about" id="smooth-content" data-appname="about">
+<div class="row wrapper">
+
+    <!--Hero-->
+    <header class="row content_information_hero">
+        <article class="row">
+            <!--Heading-->
+            <h1 class="row">ABOUT</h1>
+            <div class="row content_headings">
+                <p class="row">Beyond is an elimination-style night race where every runner begins with a 10K qualifying stage, and only the fastest advance to the final 3K. Built around the belief that limits are meant to be challenged, Beyond combines racing, atmosphere, and community into one unforgettable experience. Join us on August 29 and discover what lies beyond.</p>
+            </div>
+        </article>
+    </header>
+
+    <!--Team-->
+    <section class="row content_team classView">
+    <article class="row">
+        <h3 class="row">Behind Beyond</h3>
+        <ul class="row content_grid">
+            <li><a href="javascript:void(0)" class="row"><div class="row content_information"><h4 class="row">Race Direction</h4><h5 class="row">Concept, route and race day rhythm</h5></div><figure class="row"><picture class="row"><img src="assets/beyond-runner-road.png" alt="Runner on a foggy road" title="" class="teamThumb"/></picture></figure></a></li>
+            <li><a href="javascript:void(0)" class="row"><div class="row content_information"><h4 class="row">Operations</h4><h5 class="row">Safety, logistics and runner support</h5></div><figure class="row"><picture class="row"><img src="assets/beyond-group.png" alt="Runners in fog" title="" class="teamThumb"/></picture></figure></a></li>
+            <li><a href="javascript:void(0)" class="row"><div class="row content_information"><h4 class="row">Creative</h4><h5 class="row">Story, visuals and digital race memory</h5></div><figure class="row"><picture class="row"><img src="assets/beyond-athlete-close.png" alt="Athlete portrait" title="" class="teamThumb"/></picture></figure></a></li>
+        </ul>
+    </article>
+</section>
+
+    <!--7k Club-->
+<section class="row content_marquee classView club-album">
+    <article class="row">
+        <div class="row content_headings">
+            <h3 class="row">7k Club</h3>
+            <p class="row">7k Club is the running community behind Beyond: a group built around discipline, shared miles, hard mornings and the quiet standard of showing up. The club keeps the race alive before and after the start line through training, stories, crews and digital memories from the road.</p>
+        </div>
+        <div class="row simple-marquee-container">
+            <div class="marquee">
+                <ul class="marquee-content-items">
+                    <li><figure class="marquee01"><img src="assets/beyond-runner-road.png" alt="Runner moving alone through fog" title="" /></figure></li>
+                    <li><figure class="marquee02"><img src="assets/beyond-athlete-close.png" alt="Close black and white athlete portrait" title="" /></figure></li>
+                    <li><figure class="marquee03"><img src="assets/beyond-group.png" alt="Runners moving together in fog" title="" /></figure></li>
+                    <li><figure class="marquee04"><img src="assets/beyond-night.png" alt="Runner in high contrast night light" title="" /></figure></li>
+                    <li><figure class="marquee05"><img src="assets/beyond-hero.png" alt="Runner crossing a dark ridge" title="" /></figure></li>
+                </ul>
+                <ul aria-hidden="true" class="marquee-content-items">
+                    <li><figure class="marquee01"><img src="assets/beyond-runner-road.png" alt="Runner moving alone through fog" title="" /></figure></li>
+                    <li><figure class="marquee02"><img src="assets/beyond-athlete-close.png" alt="Close black and white athlete portrait" title="" /></figure></li>
+                    <li><figure class="marquee03"><img src="assets/beyond-group.png" alt="Runners moving together in fog" title="" /></figure></li>
+                    <li><figure class="marquee04"><img src="assets/beyond-night.png" alt="Runner in high contrast night light" title="" /></figure></li>
+                    <li><figure class="marquee05"><img src="assets/beyond-hero.png" alt="Runner crossing a dark ridge" title="" /></figure></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row simple-marquee-container content_words">
+            <div class="marquee marquee--reverse">
+                <ul class="marquee-content-items">
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
+                </ul>
+                <ul aria-hidden="true" class="marquee-content-items">
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</section>
+
+   <!--Footer-->
+<footer class="row classView">
+    <article class="row">
+        <!--Contact-->
+        <div class="row content_contact">
+            <div class="content_w">
+                <!--Get in touch-->
+                <div>
+                    <!--Heading-->
+                    <h4>Contact:</h4>
+                    <!--Information-->
+                    <a class="link" href="tel:+97680792969">+976 8079 2969</a>
+                    <a class="link" href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
+                </div>
+                <!--Drop In-->
+                <div>
+                    <!--Heading-->
+                    <h4>Race location:</h4>
+                    <!--Information-->
+                    <span>Race location</span>
+                    <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                </div>
+            </div>
+            <!--Logo-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="162" height="163" viewBox="0 0 162 163" fill="none">
+                <path d="M101.643 67.3896C103.378 66.0806 105.172 64.0691 105.415 61.1615C105.577 59.2252 105.438 57.6794 104.653 56.0408C104.042 54.7654 103.255 53.8501 102.234 53.026C101.173 52.2002 99.8656 51.5634 98.315 51.1105C96.7627 50.6592 94.9657 50.4336 92.9222 50.4336H75.0093L66.877 92.5739H88.2703C90.7843 92.5739 92.927 92.2794 94.6952 91.689C96.4635 91.1001 98.0541 90.236 99.4687 89.095C101.157 87.7988 102.405 86.2658 103.212 84.4976C104.017 82.7293 104.42 80.8827 104.42 78.9576C104.42 76.7573 103.913 74.9682 102.855 73.5456C101.376 71.5566 98.2877 70.4556 94.7128 70.0315V69.8539C97.4108 69.6699 99.7183 68.8394 101.643 67.3864V67.3896Z" />
+                <path d="M80.9873 0.695312C36.269 0.695312 0.0175781 36.9468 0.0175781 81.665C0.0175781 105.443 10.267 126.827 26.5893 141.64L48.3955 29.4673H78.2429L76.0522 40.9345H76.3883C79.6479 36.6619 83.4709 33.2343 87.8555 30.6467C92.2385 28.0623 97.1864 26.7694 102.696 26.7694C107.417 26.7694 111.659 27.7247 115.427 29.6354C119.193 31.5492 122.368 34.1624 124.955 37.4781C127.541 40.7953 129.508 44.7287 130.857 49.2813C132.207 53.8339 132.881 58.753 132.881 64.037C132.881 70.6715 132.038 77.2196 130.353 83.6813C128.666 90.1478 126.078 95.9662 122.595 101.135C119.109 106.308 114.754 110.467 109.526 113.615C104.298 116.761 98.0841 118.337 90.8911 118.337C79.1983 118.337 70.7651 113.953 65.5964 105.185H65.0907L57.5024 143.97H29.2729C43.3004 155.626 61.3254 162.635 80.9873 162.635C125.706 162.635 161.957 126.383 161.957 81.665C161.957 36.9468 125.706 0.695312 80.9873 0.695312Z" />
+            </svg>
+        </div>
+        <!--Logo-->
+        <div class="logo-word">
+            <video class="video-hover" loop="" muted playsinline autoplay preload="auto">
+
+                <source src="https://piranhabar.ie/themes/web/img/bg_hover_footer.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!--Bottom-->
+        <div class="row content_bottom">
+            <!--Legal-->
+            <span class="legal">© 2026 Beyond. All rights reserved.</span>
+            <!--By-->
+        </div>
+    </article>
+</footer>
+</div>
+</main>
+
+<!--Modal-->
+<section class="row content_modal" id="mainModal">
+    <article class="row content_box">
+        <!-- Close -->
+        <a href="javascript:void(0)" class="close_modal" aria-label="Close">
+            <!--Icon-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M1.01367 11.9199L11.5843 1.34961" stroke="white" stroke-width="2"/>
+                <path d="M11.585 11.9199L1.01428 1.34961" stroke="white" stroke-width="2"/>
+            </svg>
+            <!--Close-->
+            <span>Close</span>
+        </a>
+        <!--Content-->
+        <div class="center_content">
+            <!--Arrow Left-->
+            <a href="javascript:void" class="nav_arrow prev" aria-label="Prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                    <path d="M15.4883 8.33887L1.78261 8.33887" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8.75195 1L1.4139 8.33902L8.75195 15.6771" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
+            <!--Arrow Right-->
+            <a href="javascript:void" class="nav_arrow next" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                    <path d="M1 8.33887L14.7057 8.33887" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M7.73633 1L15.0744 8.33902L7.73633 15.6771" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
+            <!--Information-->
+            <div class="row gallery_info">
+                <span class="gallery_brand"></span>
+                <span class="gallery_project"></span>
+                <span class="gallery_director"></span>
+            </div>
+            <!-- Video principal -->
+            <video id="mainPlayer" class="video-js vjs-fluid vjs-default-skin" loop playsinline  muted controls preload="auto" poster="" data-setup='{}'> </video>
+            <!-- Slider de thumbnails -->
+            <div class="video_thumbs"></div>
+        </div>
+    </article>
+</section>
+
+
+<section class="row content_modal_bio" id="contentModalBio">
+    <article class="row content_box">
+        <!--Close-->
+        <div class="content_btn_close">
+            <a href="javascript:void(0)" class="btn_close_modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M0.707031 11.2773L11.2777 0.707031" />
+                    <path d="M11.2781 11.2773L0.707398 0.707031" />
+                </svg>
+                <span>Close</span>
+            </a>
+        </div>
+        <!--Information-->
+        <div class="row content_information">
+            <!--Image-->
+            <figure class="content_image">
+                <img src="assets/beyond-athlete-close.png" alt="Beyond athlete" title="" />
+            </figure>
+            <!--Data-->
+            <div class="content_data">
+                <!--Heading-->
+                <h3 class="row">Beyond Race</h3>
+                <!--Position-->
+                <h4 class="row">Endurance / Terrain / Community</h4>
+                <p class="row">Beyond is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
+                <p class="row">Use this space for final race dates, entry rules, routes and partner notes when those details are ready.</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!--Footer-->
+    <script type='text/javascript' src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script type='text/javascript' src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script type='text/javascript' src="https://piranhabar.ie/themes/dist/web.min.js?20260601v2"></script>
+    <script>
+        document.querySelectorAll('.btn_burger, .btn_burger_mobile').forEach((button) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                document.getElementById('contentMenu')?.classList.toggle('open');
+            }, true);
+        });
+
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const currentMap = {
+            'register.html': 'enterMenu',
+            'race-day.html': 'raceDayMenu',
+            'itinerary.html': 'raceDayMenu',
+            'about.html': 'aboutMenu',
+            'contact.html': 'contactMenu'
+        };
+        const applyCurrentNav = () => {
+            document.querySelectorAll('.content_big_navigation .item').forEach((item) => {
+                item.classList.remove('is-current', 'active', 'current');
+            });
+            document.getElementById(currentMap[currentPath])?.classList.add('is-current');
+        };
+        applyCurrentNav();
+        window.setTimeout(applyCurrentNav, 80);
+        window.setTimeout(applyCurrentNav, 500);
+
+
+        document.addEventListener('click', (event) => {
+            const menu = document.getElementById('contentMenu');
+            if (!menu?.classList.contains('open')) return;
+            if (menu.contains(event.target)) return;
+            event.preventDefault();
+            event.stopPropagation();
+            menu.classList.remove('open');
+        }, true);
+
+
+        const socialLinks = document.querySelectorAll('.content_social a');
+        const setSocialIcon = (link, label, href, svg) => {
+            if (!link) return;
+            link.href = href;
+            link.setAttribute('aria-label', label);
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener');
+            const currentIcon = link.querySelector('svg');
+            if (currentIcon) {
+                currentIcon.outerHTML = svg;
+            }
+        };
+
+        setSocialIcon(socialLinks[0], 'Facebook', 'https://www.facebook.com/7k.running.club', '<img src="assets/facebook-icon.png" alt="" aria-hidden="true" />');
+        setSocialIcon(socialLinks[2], 'Strava', 'https://www.strava.com/athletes/147066097', '<img src="assets/strava-icon.png" alt="" aria-hidden="true" />');
+    </script>
+
+<script>
+    (() => {
+        const curtain = document.getElementById("curtain");
+        if (!curtain || curtain.dataset.beyondLoader === "ready") return;
+        curtain.dataset.beyondLoader = "ready";
+
+        const startBeyondLoader = () => {
+            const fill = curtain.querySelector(".loading_fill");
+            curtain.classList.remove("animating", "is-hidden", "is-exiting", "is-loaded");
+            curtain.classList.add("beyond-loader-active");
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    curtain.classList.add("is-loaded");
+                    window.setTimeout(() => curtain.classList.add("is-exiting"), 920);
+                    window.setTimeout(() => {
+                        curtain.classList.add("is-hidden");
+                    }, 1700);
+                });
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", startBeyondLoader, { once: true });
+        } else {
+            startBeyondLoader();
+        }
+    })();
+</script>
+
+</body>
+</html>
