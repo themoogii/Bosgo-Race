@@ -212,14 +212,32 @@
         overflow: hidden;
     }
 
-    footer.row,
-    footer.row article {
+    #smooth-content > div > footer.row,
+    #smooth-content > div > footer.row article {
         min-height: 0 !important;
         height: auto !important;
     }
 
-    footer.row {
+    #smooth-content > div > footer.row {
+        position: relative !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        z-index: 2 !important;
+        display: flex !important;
+        width: 100% !important;
+        background: var(--custom-red) !important;
         padding-bottom: 28px !important;
+    }
+
+    #smooth-content > div > footer.row article {
+        position: relative !important;
+        inset: auto !important;
+        display: flex !important;
+        width: 100% !important;
+        background: transparent !important;
     }
 
     footer .content_contact {
@@ -354,6 +372,15 @@
     .content_call_actions .content_videos video[data-video="video3"] { background-image: url("assets/beyond-night.png"); }
     .content_call_actions .content_videos video[data-video="video4"] { background-image: url("assets/beyond-hero.png"); }
 
+    .content_call_actions {
+        height: min(680px, 78vh) !important;
+        min-height: 520px !important;
+    }
+
+    .content_call_actions .content_videos {
+        height: 100% !important;
+    }
+
     .encrypted-label {
         display: inline-flex;
         color: var(--black);
@@ -372,6 +399,26 @@
 
     .encrypted-label .encrypted-char.is-revealed {
         color: var(--black);
+    }
+
+    .content_animation_text h2 {
+        transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .content_animation_text.is-inview h2,
+    .content_animation_text.force-visible h2 {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+
+    .content_animation_text .letters_color {
+        color: var(--black);
+        transition: color 0.18s ease, opacity 0.18s ease;
+        will-change: color;
+    }
+
+    .content_animation_text .letters_color.is-hot {
+        color: var(--white) !important;
     }
 
     .content_call_actions .content_links a {
@@ -417,6 +464,13 @@
 
     footer .content_contact svg {
         display: none;
+    }
+
+    #smooth-content > div > footer.row.classView,
+    #smooth-content > div > footer.row.classView article {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
     }
 
     footer .logo-word::before {
@@ -645,6 +699,11 @@
             max-width: calc(100vw - 28px);
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .content_call_actions {
+            height: 520px !important;
+            min-height: 420px !important;
         }
 
         .content_big_button .big_button span {
@@ -1336,108 +1395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </article>
     </section>
 
-    <!--Brands-->
-    <section class="row content_brands classView">
-        <article class="row">
-            <!--Heading-->
-<h3 class="row">We build races for runners who want the route to mean something.</h3>
-<!--Grid-->
-<ul class="row content_grid">
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206152939_1418419268.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206152932_934682749.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206152948_2082125641.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206152958_1076244430.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153005_596234017.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153010_1636568857.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153017_468294735.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153023_1103337531.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153030_174953656.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153036_1230161480.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153042_240353151.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153048_1549589651.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153054_2113611278.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153101_562481606.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153113_701252073.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153120_1397152415.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153128_1023860046.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153134_79344343.svg" alt="" title="" />
-    </li>
-</ul>
-        </article>
-    </section>
-
-    <!--Accolades-->
-    <section class="row content_accolades classView">
-        <article class="row">
-            <!--Heading-->
-<h3 class="row">Accolades</h3>
-<!--Grid-->
-<ul class="row content_grid">
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153901_1005287472.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153908_1647240136.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153914_1036416506.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153921_1860139483.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153927_1686957835.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153933_1887370147.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153940_1768061487.svg" alt="" title="" />
-    </li>
-    <li>
-        <img src="https://piranhabar.ie/uploads/gallery/202602/20260206153942_177255037.svg" alt="" title="" />
-    </li>
-</ul>
-
-        </article>
-    </section>
-
-    <!--Footer-->
+<!--Footer-->
 <footer class="row classView">
     <article class="row">
         <!--Contact-->
@@ -1482,7 +1440,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 </footer>
 
-</div></main>
+    </div>
+</main>
 
 <!--Modal-->
 <section class="row content_modal" id="mainModal">
@@ -1683,6 +1642,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             clearActionVideos();
         }
     });
+
+    const animationTextSection = document.querySelector('.content_animation_text');
+    const animationLetters = Array.from(document.querySelectorAll('.content_animation_text .letters_color'));
+
+    if (animationTextSection) {
+        const revealAnimationText = () => {
+            animationTextSection.classList.add('is-inview', 'force-visible');
+        };
+
+        if ('IntersectionObserver' in window) {
+            const textObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        revealAnimationText();
+                        textObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+
+            textObserver.observe(animationTextSection);
+        } else {
+            revealAnimationText();
+        }
+
+        window.setTimeout(() => {
+            const rect = animationTextSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 1.1) revealAnimationText();
+        }, 800);
+    }
+
+    if (animationLetters.length && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        let letterFrame = 0;
+
+        const updateLetterHeat = (event) => {
+            window.cancelAnimationFrame(letterFrame);
+            letterFrame = window.requestAnimationFrame(() => {
+                const radius = 132;
+                animationLetters.forEach((letter) => {
+                    const rect = letter.getBoundingClientRect();
+                    const x = rect.left + rect.width / 2;
+                    const y = rect.top + rect.height / 2;
+                    const distance = Math.hypot(event.clientX - x, event.clientY - y);
+                    letter.classList.toggle('is-hot', distance < radius);
+                });
+            });
+        };
+
+        document.addEventListener('pointermove', updateLetterHeat, { passive: true });
+        animationTextSection?.addEventListener('pointerleave', () => {
+            animationLetters.forEach((letter) => letter.classList.remove('is-hot'));
+        });
+    }
 
     const socialLinks = document.querySelectorAll('.content_social a');
     const setSocialIcon = (link, label, href, svg) => {

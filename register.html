@@ -1033,6 +1033,7 @@
     }
 
     body.enter-body .runner-grid input {
+        box-sizing: border-box;
         width: 100%;
         min-height: 48px;
         padding: 13px 14px;
@@ -1066,6 +1067,7 @@
     }
 
     body.enter-body .nationality-toggle {
+        box-sizing: border-box;
         width: 100%;
         min-height: 48px;
         display: flex;
@@ -1440,14 +1442,33 @@
             min-height: 0;
         }
 
+        body.enter-body .enter-card[data-step="2"] {
+            max-height: calc(100svh - 106px);
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        body.enter-body .enter-card[data-step="2"] .enter-card-head {
+            margin-bottom: 10px;
+        }
+
         body.enter-body .division-grid {
             grid-template-columns: 1fr;
             gap: 10px;
         }
 
         body.enter-body .runner-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 7px;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        body.enter-body .runner-grid label,
+        body.enter-body .runner-wide,
+        body.enter-body .nationality-field {
+            grid-column: 1 / -1;
+            min-width: 0;
         }
 
         body.enter-body .division-card {
@@ -1477,12 +1498,14 @@
         }
 
         body.enter-body .runner-grid input {
+            box-sizing: border-box;
             min-height: 34px;
             padding: 7px 8px;
             font-size: 12px;
         }
 
         body.enter-body .nationality-toggle {
+            box-sizing: border-box;
             min-height: 34px;
             padding: 7px 8px;
             font-size: 12px;
@@ -1940,7 +1963,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required></label>
                             <label>Email address<input name="Email address" type="email" autocomplete="email" required></label>
                             <label>Birthday<input name="Birthday" type="date" required></label>
-                            <label class="runner-wide">10K PB<input name="10K PB" type="text" inputmode="numeric" placeholder="00:00:00" required><span>No official PB? Enter your best estimate.</span></label>
+                            <label class="runner-wide">10K PB<input name="10K PB" type="text" inputmode="numeric" maxlength="8" placeholder="00:00:00" required><span>No official PB? Enter your best estimate.</span></label>
                         </div>
                         <div class="enter-actions">
                             <button class="enter-button ghost" type="button" data-prev-step="1" onclick="return window.enterGoPrev?.(event, this)">BACK</button>
@@ -2383,6 +2406,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.querySelector('.enter-step.is-active input, .enter-step.is-active button, .enter-step.is-active a')?.focus({ preventScroll: true });
         };
 
+        const formatPbValue = (value) => {
+            const digits = String(value || '').replace(/\D/g, '').slice(0, 6);
+            const parts = [];
+
+            if (digits.length > 0) parts.push(digits.slice(0, 2));
+            if (digits.length > 2) parts.push(digits.slice(2, 4));
+            if (digits.length > 4) parts.push(digits.slice(4, 6));
+
+            return parts.join(':');
+        };
+
+        const formatPbField = (field) => {
+            if (!field) return;
+            const formatted = formatPbValue(field.value);
+            if (field.value !== formatted) field.value = formatted;
+        };
+
         const validateEnterStep = (step) => {
             if (step === 1) {
                 const selectedDivision = document.querySelector('input[name="Division"]:checked');
@@ -2397,6 +2437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (step === 2) {
                 const currentStep = document.querySelector('.enter-step[data-enter-step="2"]');
                 currentStep?.querySelectorAll('.field-error').forEach((field) => field.classList.remove('field-error'));
+                formatPbField(currentStep?.querySelector('input[name="10K PB"]'));
 
                 const invalidField = Array.from(currentStep?.querySelectorAll('input[required]') || []).find((field) => !field.value.trim() || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())));
                 if (invalidField) {
@@ -2460,7 +2501,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         document.querySelectorAll('.runner-grid input').forEach((field) => {
             field.addEventListener('input', () => {
+                if (field.name === '10K PB') formatPbField(field);
                 if (field.value.trim()) field.classList.remove('field-error');
+            });
+            field.addEventListener('blur', () => {
+                if (field.name === '10K PB') formatPbField(field);
             });
         });
 
