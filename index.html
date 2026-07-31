@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Beyond Race | Elimination Night Race in Ulaanbaatar</title>
+    <title>Bosgo Race | Best 10K Race Experience in Mongolia</title>
 
     <!--Metatags-->
-    <meta name="author" content="Beyond Race" />
+    <meta name="author" content="Bosgo Race" />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Beyond is an elimination-style night race in Ulaanbaatar on August 29, 2026: a 10K qualifier followed by a 3K final for the fastest runners." />
+    <meta name="description" content="Bosgo Race is built to be the best 10K race experience in Mongolia: an elimination-style night race in Ulaanbaatar on October 3, 2026, with a 10K qualifier and 3K final." />
     <meta name="language" content="English" />
     <link rel="canonical" href="index.html" />
 
-    <meta property="og:title" content="Beyond Race | Elimination Night Race in Ulaanbaatar" />
-    <meta property="og:description" content="Beyond is an elimination-style night race in Ulaanbaatar on August 29, 2026: a 10K qualifier followed by a 3K final for the fastest runners." />
+    <meta property="og:title" content="Bosgo Race | Best 10K Race Experience in Mongolia" />
+    <meta property="og:description" content="Bosgo Race is built to be the best 10K race experience in Mongolia: an elimination-style night race in Ulaanbaatar on October 3, 2026, with a 10K qualifier and 3K final." />
     <meta property="og:url" content="index.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/beyond-favicon.png" />
+    <meta property="og:image" content="assets/bosgo-race-logo.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:description" content="Beyond is an elimination-style night race in Ulaanbaatar on August 29, 2026: a 10K qualifier followed by a 3K final for the fastest runners." />
-    <meta name="twitter:title" content="Beyond Race | Elimination Night Race in Ulaanbaatar" />
-    <meta name="twitter:image" content="assets/beyond-favicon.png" />
+    <meta name="twitter:description" content="Bosgo Race is built to be the best 10K race experience in Mongolia: an elimination-style night race in Ulaanbaatar on October 3, 2026, with a 10K qualifier and 3K final." />
+    <meta name="twitter:title" content="Bosgo Race | Best 10K Race Experience in Mongolia" />
+    <meta name="twitter:image" content="assets/bosgo-race-logo.png" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" type="text/css"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" type="text/css"  />
 <link href="https://piranhabar.ie/themes/dist/web.min.css?20260601v2" rel="stylesheet" type="text/css"  />
 <style>
-    .content_menu {
+    :root {
+        --white: #F1EFE8;
+        --black: #090909;
+        --custom-red: #1601CC;
+        --custom-red-2: #1601CC;
+        --custom-red-02: rgba(22, 1, 204, 0.20);
+        --custom-red-05: rgba(22, 1, 204, 0.5);
+    }
+
+.content_menu {
         transform: translateX(0) !important;
     }
 
@@ -133,7 +142,7 @@
         left: 50% !important;
         width: 58px !important;
         height: 31px !important;
-        background: url("assets/beyond-navbar-logo.png") center / contain no-repeat !important;
+        background: url("assets/bosgo-navbar-logo.png") center / contain no-repeat !important;
         transform: translateX(-50%) !important;
         pointer-events: none !important;
     }
@@ -229,6 +238,7 @@
         display: flex !important;
         width: 100% !important;
         background: var(--custom-red) !important;
+        color: var(--black) !important;
         padding-bottom: 28px !important;
     }
 
@@ -238,6 +248,23 @@
         display: flex !important;
         width: 100% !important;
         background: transparent !important;
+        color: var(--black) !important;
+    }
+
+    #smooth-content > div > footer.row h4,
+    #smooth-content > div > footer.row a,
+    #smooth-content > div > footer.row span {
+        color: var(--black) !important;
+    }
+
+    #smooth-content > div > footer.row .content_contact,
+    #smooth-content > div > footer.row .content_bottom {
+        border-color: var(--black) !important;
+    }
+
+    #smooth-content > div > footer.row .link::after,
+    #smooth-content > div > footer.row a::after {
+        background: var(--black) !important;
     }
 
     footer .content_contact {
@@ -468,13 +495,14 @@
 
     #smooth-content > div > footer.row.classView,
     #smooth-content > div > footer.row.classView article {
-        opacity: 1 !important;
+        opacity: var(--home-footer-opacity, 0) !important;
         visibility: visible !important;
         transform: none !important;
+        transition: opacity 0.16s linear !important;
     }
 
     footer .logo-word::before {
-        content: "BEYOND";
+        content: "BOSGO";
         color: var(--white);
         font-family: Arial, Helvetica, sans-serif;
         font-size: clamp(72px, 20vw, 280px);
@@ -633,7 +661,7 @@
         height: 14px;
         border-radius: 50%;
         background: var(--custom-red);
-        box-shadow: 0 0 0 8px rgba(235, 42, 36, 0.22);
+        box-shadow: 0 0 0 8px rgba(22, 1, 204, 0.22);
     }
 
     .map-point.stage-one { left: 18%; top: 24%; }
@@ -741,6 +769,27 @@
             height: auto;
         }
 
+        .content_loading .loading_percent {
+            display: block !important;
+            position: fixed !important;
+            top: 18px !important;
+            right: 18px !important;
+            bottom: auto !important;
+            left: auto !important;
+            z-index: 100001 !important;
+            color: var(--white) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-align: right !important;
+            pointer-events: none !important;
+        }
+
+        .content_loading.is-percent-hidden .loading_percent {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
         .home-action-icon {
             width: 28px;
             height: 28px;
@@ -765,7 +814,7 @@
         top: 0 !important;
         bottom: 0 !important;
         width: 25.1% !important;
-        background: var(--custom-red, #EB2A24) !important;
+        background: var(--custom-red, #1601CC) !important;
         transform: translateY(0) !important;
         transition: transform 0.72s cubic-bezier(0.76, 0, 0.24, 1) !important;
         will-change: transform !important;
@@ -819,7 +868,6 @@
             width: 132px !important;
         }
     }
-
 </style>
 <script type="text/javascript">
     const webPath = "https://piranhabar.ie/";
@@ -827,15 +875,15 @@
     const spkVersion="";
     const spkMemUsage = "";
 </script>
-    <meta name="theme-color" content="#AD0702">
+    <meta name="theme-color" content="#1601CC">
 
 
     <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 
     <!--Favicon-->
-    <link href="assets/beyond-favicon.png" rel="shortcut icon" />
-    <link href="assets/beyond-favicon.png" rel="icon" type="image/png" />
+    <link href="assets/bosgo-race-icon.png" rel="shortcut icon" />
+    <link href="assets/bosgo-race-icon.png" rel="icon" type="image/png" />
     <script>
         const langTxt = JSON.parse('{"msgInvalidTitle":"Warning!","msgGenericErrorMsg":"An error ocurred while processing the information.","msgOkTitle":"Done!","labelLoginAction":"Login in..."}');
     </script>
@@ -853,9 +901,9 @@
     {
       "@context": "https://schema.org",
       "@type": "SportsEvent",
-      "name": "Beyond Race",
-      "description": "Beyond is an elimination-style night race where every runner begins with a 10K qualifying stage and only the fastest advance to the final 3K.",
-      "startDate": "2026-08-29",
+      "name": "Bosgo Race",
+      "description": "Bosgo Race is built to be the best 10K race experience in Mongolia: an elimination-style night race where every runner begins with a 10K qualifying stage and only the fastest advance to the final 3K.",
+      "startDate": "2026-10-03",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "sport": "Running",
@@ -910,7 +958,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <!--Logo-->
     <a href="index.html" class="logo">
-        <img src="assets/beyond-navbar-logo.png" alt="Beyond" class="site-logo-image" />
+        <img src="assets/bosgo-navbar-logo.png" alt="Bosgo" class="site-logo-image" />
     </a>
 
     <!--Social-->
@@ -960,7 +1008,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!--Item-->
             <li class="row item" id="enterMenu">
                 <a href="register.html" class="link">
-                    Enter
+                    Register
                     <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
                 </a>
             </li>
@@ -1001,7 +1049,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h4>Race location:</h4>
                 <!--Information-->
                 <span>Race location</span>
-                <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                <span>October 3, 2026 • Ulaanbaatar, Mongolia</span>
             </div>
             <!--Get in touch-->
             <div>
@@ -1024,7 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="big_logo" id="loader_animation"></div>
     <!--Intro Animation-->
     <figure class="row big_logo_white_bottom">
-        <img src="assets/beyond-race-white.png" alt="Beyond" title="" />
+        <img src="assets/bosgo-race-home-logo.png" alt="Bosgo Race" title="" />
     </figure>
     <!--Percentage-->
     <div class="loading_percent">0%</div>
@@ -1036,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!--Hero-->
     <header class="row content_hero">
-    <h1 class="seo-only">Beyond Race - Elimination Night Race in Ulaanbaatar</h1>
+    <h1 class="seo-only">Bosgo Race - Elimination Night Race in Ulaanbaatar</h1>
     <article class="row" data-speed="0.5">
             <!--Video-->
             <picture class="row content_bg_video desktop" data-speed="0.7">
@@ -1057,7 +1105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--Section Text Animations-->
     <section class="row content_animation_text classView">
         <article class="row">
-            <h2 class="row" title="Everyone reaches a moment when their body tells them to stop. Beyond exists for the decision that comes next. We believe the strongest performances aren't defined by talent alone, but by the willingness to keep moving when every instinct says otherwise." alt="Everyone reaches a moment when their body tells them to stop. Beyond exists for the decision that comes next. We believe the strongest performances aren't defined by talent alone, but by the willingness to keep moving when every instinct says otherwise.">
+            <h2 class="row" title="Everyone reaches a moment when their body tells them to stop. Bosgo exists for the decision that comes next. We believe the strongest performances aren't defined by talent alone, but by the willingness to keep moving when every instinct says otherwise." alt="Everyone reaches a moment when their body tells them to stop. Bosgo exists for the decision that comes next. We believe the strongest performances aren't defined by talent alone, but by the willingness to keep moving when every instinct says otherwise.">
                 <div>
                     <span class="letters_color color01">E</span>
                     <span class="letters_color color02">v</span>
@@ -1415,7 +1463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h4>Race location:</h4>
                     <!--Information-->
                     <span>Race location</span>
-                    <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                    <span>October 3, 2026 • Ulaanbaatar, Mongolia</span>
                 </div>
             </div>
             <!--Logo-->
@@ -1434,7 +1482,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!--Bottom-->
         <div class="row content_bottom">
             <!--Legal-->
-            <span class="legal">© 2026 Beyond. All rights reserved.</span>
+            <span class="legal">© 2026 Bosgo. All rights reserved.</span>
             <!--By-->
         </div>
     </article>
@@ -1503,15 +1551,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row content_information">
             <!--Image-->
             <figure class="content_image">
-                <img src="assets/beyond-athlete-close.png" alt="Beyond athlete" title="" />
+                <img src="assets/beyond-athlete-close.png" alt="Bosgo athlete" title="" />
             </figure>
             <!--Data-->
             <div class="content_data">
                 <!--Heading-->
-                <h3 class="row">Beyond Race</h3>
+                <h3 class="row">Bosgo Race</h3>
                 <!--Position-->
                 <h4 class="row">Endurance / Terrain / Community</h4>
-                <p class="row">Beyond is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
+                <p class="row">Bosgo is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
                 <p class="row">Use this space for final race dates, entry rules, routes and partner notes when those details are ready.</p>
             </div>
         </div>
@@ -1643,6 +1691,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     });
 
+    const homeFooter = document.querySelector('#smooth-content > div > footer.row');
+    const updateHomeFooterOpacity = () => {
+        if (!homeFooter) return;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const progress = scrollTop / maxScroll;
+        const opacity = Math.min(1, Math.max(0, (progress - 0.72) / 0.28));
+        homeFooter.style.setProperty('--home-footer-opacity', opacity.toFixed(3));
+    };
+
+    updateHomeFooterOpacity();
+    window.addEventListener('scroll', updateHomeFooterOpacity, { passive: true });
+    window.addEventListener('resize', updateHomeFooterOpacity);
+
     const animationTextSection = document.querySelector('.content_animation_text');
     const animationLetters = Array.from(document.querySelectorAll('.content_animation_text .letters_color'));
 
@@ -1717,9 +1779,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const curtain = document.getElementById("curtain");
         if (!curtain || curtain.dataset.beyondLoader === "ready") return;
         curtain.dataset.beyondLoader = "ready";
+        const loadingSection = document.getElementById("contentLoading");
+        const loadingPercent = loadingSection?.querySelector(".loading_percent");
+
+        if (loadingSection && loadingPercent) {
+            const hidePercentAtComplete = () => {
+                if ((loadingPercent.textContent || "").trim() !== "100%") return;
+                window.setTimeout(() => {
+                    loadingSection.classList.add("is-percent-hidden");
+                }, 120);
+            };
+
+            hidePercentAtComplete();
+            new MutationObserver(hidePercentAtComplete).observe(loadingPercent, {
+                childList: true,
+                characterData: true,
+                subtree: true
+            });
+        }
 
         const startBeyondLoader = () => {
             const fill = curtain.querySelector(".loading_fill");
+            loadingSection?.classList.remove("is-percent-hidden");
             curtain.classList.remove("animating", "is-hidden", "is-exiting", "is-loaded");
             curtain.classList.add("beyond-loader-active");
 

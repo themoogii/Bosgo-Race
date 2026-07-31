@@ -2,30 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>About Beyond Race | Concept, Vision and 7K Club</title>
+    <title>About Bosgo Race | Concept, Vision and 7K Club</title>
 
     <!--Metatags-->
-    <meta name="author" content="Beyond Race" />
+    <meta name="author" content="Bosgo Race" />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Learn the concept and vision behind Beyond Race, the team behind it and the 7K Club community shaping the experience." />
+    <meta name="description" content="Learn the concept and vision behind Bosgo Race, the team behind it and the 7K Club community shaping the experience." />
     <meta name="language" content="English" />
     <link rel="canonical" href="about.html" />
 
-    <meta property="og:title" content="About Beyond Race | Concept, Vision and 7K Club" />
-    <meta property="og:description" content="Learn the concept and vision behind Beyond Race, the team behind it and the 7K Club community shaping the experience." />
+    <meta property="og:title" content="About Bosgo Race | Concept, Vision and 7K Club" />
+    <meta property="og:description" content="Learn the concept and vision behind Bosgo Race, the team behind it and the 7K Club community shaping the experience." />
     <meta property="og:url" content="about.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/beyond-favicon.png" />
+    <meta property="og:image" content="assets/bosgo-race-logo.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:description" content="Learn the concept and vision behind Beyond Race, the team behind it and the 7K Club community shaping the experience." />
-    <meta name="twitter:title" content="About Beyond Race | Concept, Vision and 7K Club" />
-    <meta name="twitter:image" content="assets/beyond-favicon.png" />
+    <meta name="twitter:description" content="Learn the concept and vision behind Bosgo Race, the team behind it and the 7K Club community shaping the experience." />
+    <meta name="twitter:title" content="About Bosgo Race | Concept, Vision and 7K Club" />
+    <meta name="twitter:image" content="assets/bosgo-race-logo.png" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" type="text/css"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" type="text/css"  />
 <link href="https://piranhabar.ie/themes/dist/web.min.css?20260601v2" rel="stylesheet" type="text/css"  />
 <style>
-    .content_menu {
+    :root {
+        --custom-red: #E94706;
+        --custom-red-2: #E94706;
+        --custom-red-02: rgba(233, 71, 6, 0.20);
+        --custom-red-05: rgba(233, 71, 6, 0.5);
+    }
+
+.content_menu {
         transform: translateX(0) !important;
     }
 
@@ -121,7 +128,7 @@
         left: 50% !important;
         width: 58px !important;
         height: 31px !important;
-        background: url("assets/beyond-navbar-logo.png") center / contain no-repeat !important;
+        background: url("assets/bosgo-navbar-logo.png") center / contain no-repeat !important;
         transform: translateX(-50%) !important;
         pointer-events: none !important;
     }
@@ -295,7 +302,7 @@
     }
 
     footer .logo-word::before {
-        content: "BEYOND";
+        content: "BOSGO";
         color: var(--white);
         font-family: Arial, Helvetica, sans-serif;
         font-size: clamp(72px, 20vw, 280px);
@@ -464,7 +471,7 @@
         height: 14px;
         border-radius: 50%;
         background: var(--custom-red);
-        box-shadow: 0 0 0 8px rgba(235, 42, 36, 0.22);
+        box-shadow: 0 0 0 8px rgba(233, 71, 6, 0.22);
     }
 
     .map-point.stage-one { left: 18%; top: 24%; }
@@ -485,6 +492,56 @@
             white-space: normal !important;
             text-align: center !important;
             overflow-wrap: break-word !important;
+        }
+
+        .content_team article {
+            padding-inline: 18px !important;
+        }
+
+        .content_team .content_grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 12px !important;
+            align-items: start !important;
+        }
+
+        .content_team .content_grid li,
+        .content_team .content_grid li a {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .content_team figure {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1 / 1.28 !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+        }
+
+        .content_team figure img,
+        .content_team .teamThumb {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        .content_team .content_information {
+            margin-top: 12px !important;
+        }
+
+        .content_team .content_information h4 {
+            font-size: clamp(14px, 3.9vw, 18px) !important;
+            line-height: 1 !important;
+            white-space: normal !important;
+            text-align: center !important;
+        }
+
+        .content_team .content_information h5 {
+            font-size: clamp(8px, 2.45vw, 10px) !important;
+            line-height: 1.1 !important;
+            letter-spacing: 0.08em !important;
+            text-align: center !important;
         }
 
         footer .content_contact .content_w {
@@ -517,7 +574,7 @@
         top: 0 !important;
         bottom: 0 !important;
         width: 25.1% !important;
-        background: var(--custom-red, #EB2A24) !important;
+        background: var(--custom-red, #E94706) !important;
         transform: translateY(0) !important;
         transition: transform 0.72s cubic-bezier(0.76, 0, 0.24, 1) !important;
         will-change: transform !important;
@@ -571,7 +628,6 @@
             width: 132px !important;
         }
     }
-
 </style>
 <script type="text/javascript">
     const webPath = "https://piranhabar.ie/";
@@ -586,8 +642,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 
     <!--Favicon-->
-    <link href="assets/beyond-favicon.png" rel="shortcut icon" />
-    <link href="assets/beyond-favicon.png" rel="icon" type="image/png" />
+    <link href="assets/bosgo-race-icon.png" rel="shortcut icon" />
+    <link href="assets/bosgo-race-icon.png" rel="icon" type="image/png" />
     <script>
         const langTxt = JSON.parse('{"msgInvalidTitle":"Warning!","msgGenericErrorMsg":"An error ocurred while processing the information.","msgOkTitle":"Done!","labelLoginAction":"Login in..."}');
     </script>
@@ -634,7 +690,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <!--Logo-->
     <a href="index.html" class="logo">
-        <img src="assets/beyond-navbar-logo.png" alt="Beyond" class="site-logo-image" />
+        <img src="assets/bosgo-navbar-logo.png" alt="Bosgo" class="site-logo-image" />
     </a>
 
     <!--Social-->
@@ -684,7 +740,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!--Item-->
             <li class="row item" id="enterMenu">
                 <a href="register.html" class="link">
-                    Enter
+                    Register
                     <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
                 </a>
             </li>
@@ -725,7 +781,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h4>Race location:</h4>
                 <!--Information-->
                 <span>Race location</span>
-                <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                <span>October 3, 2026 • Ulaanbaatar, Mongolia</span>
             </div>
             <!--Get in touch-->
             <div>
@@ -749,7 +805,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!--Heading-->
             <h1 class="row">ABOUT</h1>
             <div class="row content_headings">
-                <p class="row">Beyond is an elimination-style night race where every runner begins with a 10K qualifying stage, and only the fastest advance to the final 3K. Built around the belief that limits are meant to be challenged, Beyond combines racing, atmosphere, and community into one unforgettable experience. Join us on August 29 and discover what lies beyond.</p>
+                <p class="row">Bosgo is an elimination-style night race where every runner begins with a 10K qualifying stage, and only the fastest advance to the final 3K. Built around the belief that limits are meant to be challenged, Bosgo combines racing, atmosphere, and community into one unforgettable experience. Join us on October 3 and discover what lies beyond.</p>
             </div>
         </article>
     </header>
@@ -757,7 +813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--Team-->
     <section class="row content_team classView">
     <article class="row">
-        <h3 class="row">Behind Beyond</h3>
+        <h3 class="row">Behind Bosgo</h3>
         <ul class="row content_grid">
             <li><a href="javascript:void(0)" class="row"><div class="row content_information"><h4 class="row">Race Direction</h4><h5 class="row">Concept, route and race day rhythm</h5></div><figure class="row"><picture class="row"><img src="assets/beyond-runner-road.png" alt="Runner on a foggy road" title="" class="teamThumb"/></picture></figure></a></li>
             <li><a href="javascript:void(0)" class="row"><div class="row content_information"><h4 class="row">Operations</h4><h5 class="row">Safety, logistics and runner support</h5></div><figure class="row"><picture class="row"><img src="assets/beyond-group.png" alt="Runners in fog" title="" class="teamThumb"/></picture></figure></a></li>
@@ -771,7 +827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <article class="row">
         <div class="row content_headings">
             <h3 class="row">7k Club</h3>
-            <p class="row">7k Club is the running community behind Beyond: a group built around discipline, shared miles, hard mornings and the quiet standard of showing up. The club keeps the race alive before and after the start line through training, stories, crews and digital memories from the road.</p>
+            <p class="row">7k Club is the running community behind Bosgo: a group built around discipline, shared miles, hard mornings and the quiet standard of showing up. The club keeps the race alive before and after the start line through training, stories, crews and digital memories from the road.</p>
         </div>
         <div class="row simple-marquee-container">
             <div class="marquee">
@@ -794,12 +850,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row simple-marquee-container content_words">
             <div class="marquee marquee--reverse">
                 <ul class="marquee-content-items">
-                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
-                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BOSGO / CREWS / STORIES / KEEP MOVING /</span></li>
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BOSGO / CREWS / STORIES / KEEP MOVING /</span></li>
                 </ul>
                 <ul aria-hidden="true" class="marquee-content-items">
-                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
-                    <li><span>7K CLUB / TRAINING / COMMUNITY / BEYOND / CREWS / STORIES / KEEP MOVING /</span></li>
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BOSGO / CREWS / STORIES / KEEP MOVING /</span></li>
+                    <li><span>7K CLUB / TRAINING / COMMUNITY / BOSGO / CREWS / STORIES / KEEP MOVING /</span></li>
                 </ul>
             </div>
         </div>
@@ -826,7 +882,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h4>Race location:</h4>
                     <!--Information-->
                     <span>Race location</span>
-                    <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                    <span>October 3, 2026 • Ulaanbaatar, Mongolia</span>
                 </div>
             </div>
             <!--Logo-->
@@ -845,7 +901,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!--Bottom-->
         <div class="row content_bottom">
             <!--Legal-->
-            <span class="legal">© 2026 Beyond. All rights reserved.</span>
+            <span class="legal">© 2026 Bosgo. All rights reserved.</span>
             <!--By-->
         </div>
     </article>
@@ -913,15 +969,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row content_information">
             <!--Image-->
             <figure class="content_image">
-                <img src="assets/beyond-athlete-close.png" alt="Beyond athlete" title="" />
+                <img src="assets/beyond-athlete-close.png" alt="Bosgo athlete" title="" />
             </figure>
             <!--Data-->
             <div class="content_data">
                 <!--Heading-->
-                <h3 class="row">Beyond Race</h3>
+                <h3 class="row">Bosgo Race</h3>
                 <!--Position-->
                 <h4 class="row">Endurance / Terrain / Community</h4>
-                <p class="row">Beyond is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
+                <p class="row">Bosgo is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
                 <p class="row">Use this space for final race dates, entry rules, routes and partner notes when those details are ready.</p>
             </div>
         </div>

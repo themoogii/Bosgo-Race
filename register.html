@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Enter Beyond | Race Registration</title>
+    <title>Enter Bosgo | Race Registration</title>
 
     <!--Metatags-->
-    <meta name="author" content="Beyond Race" />
+    <meta name="author" content="Bosgo Race" />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Enter Beyond Race on August 29, 2026. Choose your division, add runner details and complete payment through 7K Club." />
+    <meta name="description" content="Enter Bosgo Race on October 3, 2026. Choose your division, add runner details and complete payment through 7K Club." />
     <meta name="language" content="English" />
     <link rel="canonical" href="register.html" />
 
-    <meta property="og:title" content="Enter Beyond | Race Registration" />
-    <meta property="og:description" content="Enter Beyond Race on August 29, 2026. Choose your division, add runner details and complete payment through 7K Club." />
+    <meta property="og:title" content="Enter Bosgo | Race Registration" />
+    <meta property="og:description" content="Enter Bosgo Race on October 3, 2026. Choose your division, add runner details and complete payment through 7K Club." />
     <meta property="og:url" content="register.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/beyond-favicon.png" />
+    <meta property="og:image" content="assets/bosgo-race-logo.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:description" content="Enter Beyond Race on August 29, 2026. Choose your division, add runner details and complete payment through 7K Club." />
-    <meta name="twitter:title" content="Enter Beyond | Race Registration" />
-    <meta name="twitter:image" content="assets/beyond-favicon.png" />
+    <meta name="twitter:description" content="Enter Bosgo Race on October 3, 2026. Choose your division, add runner details and complete payment through 7K Club." />
+    <meta name="twitter:title" content="Enter Bosgo | Race Registration" />
+    <meta name="twitter:image" content="assets/bosgo-race-logo.png" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" type="text/css"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" type="text/css"  />
 <link href="https://piranhabar.ie/themes/dist/web.min.css?20260601v2" rel="stylesheet" type="text/css"  />
 <style>
-    .content_menu {
+    :root {
+        --white: #F1EFE8;
+        --black: #090909;
+        --custom-red: #1601CC;
+        --custom-red-2: #1601CC;
+        --custom-red-02: rgba(22, 1, 204, 0.20);
+        --custom-red-05: rgba(22, 1, 204, 0.5);
+    }
+
+.content_menu {
         transform: translateX(0) !important;
     }
 
@@ -121,7 +130,7 @@
         left: 50% !important;
         width: 58px !important;
         height: 31px !important;
-        background: url("assets/beyond-navbar-logo.png") center / contain no-repeat !important;
+        background: url("assets/bosgo-navbar-logo.png") center / contain no-repeat !important;
         transform: translateX(-50%) !important;
         pointer-events: none !important;
     }
@@ -299,7 +308,7 @@
     }
 
     footer .logo-word::before {
-        content: "BEYOND";
+        content: "BOSGO";
         color: var(--white);
         font-family: Arial, Helvetica, sans-serif;
         font-size: clamp(72px, 20vw, 280px);
@@ -765,7 +774,7 @@
 
     body.enter-body main.enter-page {
         background:
-            radial-gradient(circle at 50% 0%, rgba(235, 42, 36, 0.2), transparent 36%),
+            radial-gradient(circle at 50% 0%, rgba(22, 1, 204, 0.2), transparent 36%),
             linear-gradient(180deg, #050505 0%, #111 100%) !important;
     }
 
@@ -815,7 +824,7 @@
         height: 240px;
         right: -110px;
         bottom: -120px;
-        border: 1px solid rgba(235, 42, 36, 0.38);
+        border: 1px solid rgba(22, 1, 204, 0.38);
         border-radius: 50%;
         opacity: 0.9;
         transform: scale(0.8);
@@ -852,7 +861,7 @@
     body.enter-body .enter-progress {
         order: 2;
         flex: 0 0 auto;
-        color: var(--custom-red);
+        color: var(--white);
         font-size: 13px;
         line-height: 1;
         text-transform: uppercase;
@@ -980,13 +989,13 @@
     body.enter-body .division-card:focus-visible,
     body.enter-body .division-card:has(input:checked) {
         transform: translateY(-2px);
-        background: rgba(235, 42, 36, 0.12);
+        background: rgba(22, 1, 204, 0.12);
         border-color: var(--custom-red);
         outline: 0;
     }
 
     body.enter-body .division-card:focus-visible {
-        box-shadow: 0 0 0 2px rgba(235, 42, 36, 0.3);
+        box-shadow: 0 0 0 2px rgba(22, 1, 204, 0.3);
     }
 
     body.enter-body .division-card:hover::after {
@@ -997,7 +1006,7 @@
     body.enter-body .division-card:has(input:checked)::before {
         background: var(--custom-red);
         border-color: var(--custom-red);
-        box-shadow: 0 0 0 7px rgba(235, 42, 36, 0.18);
+        box-shadow: 0 0 0 7px rgba(22, 1, 204, 0.18);
     }
 
     body.enter-body .division-title {
@@ -1089,7 +1098,7 @@
     body.enter-body .nationality-selector.is-open .nationality-toggle {
         outline: 0;
         border-color: var(--custom-red);
-        background: rgba(235, 42, 36, 0.1);
+        background: rgba(22, 1, 204, 0.1);
     }
 
     body.enter-body .nationality-flag {
@@ -1188,7 +1197,7 @@
     body.enter-body .nationality-option:focus-visible,
     body.enter-body .nationality-option.is-selected {
         outline: 0;
-        background: rgba(235, 42, 36, 0.14);
+        background: rgba(22, 1, 204, 0.14);
         color: var(--white);
     }
 
@@ -1341,7 +1350,7 @@
 
     body.enter-body .field-error {
         border-color: var(--custom-red) !important;
-        box-shadow: 0 0 0 1px rgba(235, 42, 36, 0.35);
+        box-shadow: 0 0 0 1px rgba(22, 1, 204, 0.35);
     }
 
     body.enter-body .enter-toast {
@@ -1597,7 +1606,7 @@
         height: 14px;
         border-radius: 50%;
         background: var(--custom-red);
-        box-shadow: 0 0 0 8px rgba(235, 42, 36, 0.22);
+        box-shadow: 0 0 0 8px rgba(22, 1, 204, 0.22);
     }
 
     .map-point.stage-one { left: 18%; top: 24%; }
@@ -1690,7 +1699,7 @@
         top: 0 !important;
         bottom: 0 !important;
         width: 25.1% !important;
-        background: var(--custom-red, #EB2A24) !important;
+        background: var(--custom-red, #1601CC) !important;
         transform: translateY(0) !important;
         transition: transform 0.72s cubic-bezier(0.76, 0, 0.24, 1) !important;
         will-change: transform !important;
@@ -1745,6 +1754,11 @@
         }
     }
 
+    body.enter-body,
+    body.enter-body main.enter-page,
+    body.enter-body main.enter-page .wrapper {
+        background: var(--custom-red) !important;
+    }
 </style>
 <script type="text/javascript">
     const webPath = "https://piranhabar.ie/";
@@ -1752,15 +1766,15 @@
     const spkVersion="";
     const spkMemUsage = "";
 </script>
-    <meta name="theme-color" content="#AD0702">
+    <meta name="theme-color" content="#1601CC">
 
 
     <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 
     <!--Favicon-->
-    <link href="assets/beyond-favicon.png" rel="shortcut icon" />
-    <link href="assets/beyond-favicon.png" rel="icon" type="image/png" />
+    <link href="assets/bosgo-race-icon.png" rel="shortcut icon" />
+    <link href="assets/bosgo-race-icon.png" rel="icon" type="image/png" />
     <script>
         const langTxt = JSON.parse('{"msgInvalidTitle":"Warning!","msgGenericErrorMsg":"An error ocurred while processing the information.","msgOkTitle":"Done!","labelLoginAction":"Login in..."}');
     </script>
@@ -1807,7 +1821,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <!--Logo-->
     <a href="index.html" class="logo">
-        <img src="assets/beyond-navbar-logo.png" alt="Beyond" class="site-logo-image" />
+        <img src="assets/bosgo-navbar-logo.png" alt="Bosgo" class="site-logo-image" />
     </a>
 
     <!--Social-->
@@ -1857,7 +1871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!--Item-->
             <li class="row item" id="enterMenu">
                 <a href="register.html" class="link">
-                    Enter
+                    Register
                     <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 1000 1000" fill="none" class="nav-symbol-7k"><path fill-rule="evenodd" clip-rule="evenodd" d="M520.319 436C539.157 406.5 544.679 366 520.319 343.5C494.98 320.095 424.078 327 424.078 327C299.699 335.5 60.242 472.5 217.044 774.5C224.053 788 237.952 822.176 217.044 843C196.881 863.082 156.903 867.5 130.838 837.5C90.892 792.667 0 679.6 0 500C0 253.5 198.807 0 499.745 0C791.483 0 1000 247.5 1000 500C1000 738 810.543 1000 499.745 1000C405.611 1000 281.7 932.5 281.7 783C281.7 633.5 469.189 516.07 520.319 436ZM606.019 76.4999C426.96 47.211 279.117 134 250 170C220.884 206 240.218 254.5 300.703 254.5C423.695 254.5 510.279 216 612.034 216C687.249 216 724.554 289.5 687.249 346.5C649.944 403.5 617.972 430.5 550.44 498C434.476 613.908 324.202 749.953 395.535 821C466.868 892.047 633.048 829 715.292 764.5C942.261 586.5 917.466 373.667 876.697 279.5C846.956 212.167 771.084 103.5 606.019 76.4999Z" fill="currentColor"/></svg>
                 </a>
             </li>
@@ -1898,7 +1912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h4>Race location:</h4>
                 <!--Information-->
                 <span>Race location</span>
-                <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                <span>October 3, 2026 • Ulaanbaatar, Mongolia</span>
             </div>
             <!--Get in touch-->
             <div>
@@ -1914,13 +1928,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!--Main-->
 <main class="contact race-page enter-page" id="smooth-content" data-appname="enter">
-    <section class="enter-experience" aria-label="Beyond Race registration">
+    <section class="enter-experience" aria-label="Bosgo Race registration">
         <div class="enter-shell">
-            <div class="enter-kicker">August 29 · Ulaanbaatar · 10K Qualifier → 3K Final</div>
+            <div class="enter-kicker">October 3 · Ulaanbaatar · 10K Qualifier → 3K Final</div>
             <div class="enter-card" data-step="1" data-direction="next">
                 <div class="enter-card-head">
                     <p class="enter-progress" id="enterProgress">01/03</p>
-                    <h1>ENTER BEYOND</h1>
+                    <h1>ENTER BOSGO</h1>
                 </div>
 
                 <form class="enter-wizard" action="mailto:the.7k.club@gmail.com" method="post" enctype="text/plain">
@@ -2018,7 +2032,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h4>Race location:</h4>
                     <!--Information-->
                     <span>Race location</span>
-                    <span>August 29, 2026 • Ulaanbaatar, Mongolia</span>
+                    <span>October 3, 2026 • Ulaanbaatar, Mongolia</span>
                 </div>
             </div>
             <!--Logo-->
@@ -2037,7 +2051,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!--Bottom-->
         <div class="row content_bottom">
             <!--Legal-->
-            <span class="legal">© 2026 Beyond. All rights reserved.</span>
+            <span class="legal">© 2026 Bosgo. All rights reserved.</span>
             <!--By-->
         </div>
     </article>
@@ -2104,15 +2118,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row content_information">
             <!--Image-->
             <figure class="content_image">
-                <img src="assets/beyond-athlete-close.png" alt="Beyond athlete" title="" />
+                <img src="assets/beyond-athlete-close.png" alt="Bosgo athlete" title="" />
             </figure>
             <!--Data-->
             <div class="content_data">
                 <!--Heading-->
-                <h3 class="row">Beyond Race</h3>
+                <h3 class="row">Bosgo Race</h3>
                 <!--Position-->
                 <h4 class="row">Endurance / Terrain / Community</h4>
-                <p class="row">Beyond is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
+                <p class="row">Bosgo is for runners who want more than a finish time. It is a race atmosphere built from fog, distance, restraint and the decision to keep moving.</p>
                 <p class="row">Use this space for final race dates, entry rules, routes and partner notes when those details are ready.</p>
             </div>
         </div>
