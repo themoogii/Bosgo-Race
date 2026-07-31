@@ -1,4 +1,4 @@
-# Piranha Bar Clone
+# Bosgo Race 2026
 
 This folder contains a static local clone of `https://piranhabar.ie/`.
 
