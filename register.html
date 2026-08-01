@@ -887,6 +887,10 @@
         min-height: 330px;
     }
 
+    body.enter-body .netlify-hidden {
+        display: none !important;
+    }
+
     body.enter-body .enter-step {
         display: none;
         opacity: 0;
@@ -1937,7 +1941,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h1>ENTER BOSGO</h1>
                 </div>
 
-                <form class="enter-wizard" action="mailto:the.7k.club@gmail.com" method="post" enctype="text/plain">
+                <form class="enter-wizard" name="bosgo-registration" action="/register.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="bosgo-registration">
+                    <input type="hidden" name="Registration ID" value="">
+                    <input type="hidden" name="Payment Status" value="Pending">
+                    <p class="netlify-hidden" aria-hidden="true">
+                        <label>Do not fill this out<input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                    </p>
                     <section class="enter-step is-active" data-enter-step="1" aria-label="Choose division">
                         <h2>Choose Division</h2>
                         <div class="division-grid">
@@ -2002,7 +2012,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="enter-actions">
                             <button class="enter-button ghost" type="button" data-prev-step="2" onclick="return window.enterGoPrev?.(event, this)">BACK</button>
-                            <a class="enter-button payment" href="https://www.the7k.club/shop" target="_blank" rel="noopener">PAY WITH 7K CLUB</a>
+                            <a class="enter-button payment" href="https://www.the7k.club/shop" rel="noopener">PAY WITH 7K CLUB</a>
                         </div>
                     </section>
                 </form>
@@ -2374,6 +2384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const enterProgress = document.getElementById('enterProgress');
         const enterSteps = document.querySelectorAll('.enter-step');
         const enterToast = document.querySelector('.enter-toast');
+        const enterForm = document.querySelector('.enter-wizard');
         let activeEnterStep = 1;
         const enterProgressLabels = {
             1: '01/03',
@@ -2435,6 +2446,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (!field) return;
             const formatted = formatPbValue(field.value);
             if (field.value !== formatted) field.value = formatted;
+        };
+
+        const ensureRegistrationId = () => {
+            const idField = enterForm?.querySelector('input[name="Registration ID"]');
+            if (!idField) return '';
+            if (!idField.value) {
+                const now = new Date();
+                const datePart = now.toISOString().slice(0, 10).replace(/-/g, '');
+                const randomPart = Math.random().toString(36).slice(2, 8).toUpperCase();
+                idField.value = `BOSGO-${datePart}-${randomPart}`;
+            }
+            return idField.value;
+        };
+
+        const submitRegistrationToNetlify = async () => {
+            if (!enterForm) throw new Error('Registration form not found');
+            ensureRegistrationId();
+            const formData = new FormData(enterForm);
+
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            });
+
+            if (!response.ok) {
+                throw new Error(`Netlify form failed with ${response.status}`);
+            }
         };
 
         const validateEnterStep = (step) => {
@@ -2637,11 +2676,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             window.enterGoPrev(event, previousButton);
         }, true);
 
-        document.querySelector('.enter-button.payment')?.addEventListener('click', (event) => {
+        document.querySelector('.enter-button.payment')?.addEventListener('click', async (event) => {
+            event.preventDefault();
             const paymentButton = event.currentTarget;
+            if (!validateEnterStep(1) || !validateEnterStep(2)) return;
+
             paymentButton.classList.add('is-confirming');
-            showEnterToast('Opening 7K Club payment');
-            window.setTimeout(() => paymentButton.classList.remove('is-confirming'), 900);
+            showEnterToast('Saving registration');
+
+            try {
+                await submitRegistrationToNetlify();
+                showEnterToast('Saved. Opening payment');
+                window.setTimeout(() => {
+                    window.location.href = paymentButton.href;
+                }, 450);
+            } catch (error) {
+                console.error(error);
+                paymentButton.classList.remove('is-confirming');
+                shakeEnterCard();
+                showEnterToast('Could not save. Try again');
+            }
         });
 
 

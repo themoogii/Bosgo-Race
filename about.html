@@ -353,6 +353,19 @@
     .content_marquee.club-album .simple-marquee-container:first-of-type {
         margin-top: 46px;
     }
+
+    .content_team .teamThumb {
+        filter: grayscale(100%);
+        transition: filter 0.55s ease, transform 0.55s ease;
+        will-change: filter, transform;
+    }
+
+    .content_team a:hover .teamThumb,
+    .content_team a:focus-visible .teamThumb {
+        filter: grayscale(0%);
+        transform: scale(1.035);
+    }
+
     .content_menu.open .content_big_navigation .content_links > .item > .link {
         color: var(--black) !important;
     }
