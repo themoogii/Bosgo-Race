@@ -25,3 +25,23 @@ http://127.0.0.1:8088/contact.html
 The pages keep the original production markup and reference the original remote CSS, JavaScript, fonts, SVG logos, Lottie assets, images, and MP4 media so the loader, side menu, scroll animations, hover video changes, modal shells, typography, and responsive styling stay as close as possible to the live site.
 
 Because the animation/media assets are loaded from `piranhabar.ie` and CDNs, an internet connection is required for the full visual result.
+
+## Google Sheets registration tracker
+
+The register page can mirror Netlify form submissions into Google Sheets.
+
+1. Create a new Google Sheet.
+2. In the Sheet, open `Extensions -> Apps Script`.
+3. Paste the code from `google-sheets-apps-script.js`.
+4. Click `Deploy -> New deployment`.
+5. Choose `Web app`.
+6. Set `Execute as` to `Me`.
+7. Set `Who has access` to `Anyone`.
+8. Deploy and copy the Web App URL.
+9. In `register.html`, paste that URL into:
+
+```js
+const googleSheetsWebAppUrl = '';
+```
+
+After Netlify redeploys, every registration will save to Netlify Forms and also append a row in the Google Sheet.

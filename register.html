@@ -2502,6 +2502,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         let activeEnterStep = 1;
         let registrationSaved = false;
         let registrationSaving = false;
+        const googleSheetsWebAppUrl = '';
         const enterProgressLabels = {
             1: '01/03',
             2: '02/03',
@@ -2576,7 +2577,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return idField.value;
         };
 
-        const submitRegistrationToNetlify = async () => {
+        const submitRegistrationToGoogleSheets = async (formData) => {
+            if (!googleSheetsWebAppUrl) return;
+
+            await fetch(googleSheetsWebAppUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(Object.fromEntries(formData.entries()))
+            });
+        };
+
+        const submitRegistration = async () => {
             if (!enterForm) throw new Error('Registration form not found');
             if (registrationSaved || registrationSaving) return;
             registrationSaving = true;
@@ -2601,6 +2613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     throw new Error(`Netlify form failed with ${response.status}`);
                 }
 
+                await submitRegistrationToGoogleSheets(formData);
                 registrationSaved = true;
             } finally {
                 registrationSaving = false;
@@ -2658,7 +2671,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             try {
                 if (currentStep === 2 && nextStep === 3 && !registrationSaved) {
                     showEnterToast('Saving registration');
-                    await submitRegistrationToNetlify();
+                    await submitRegistration();
                     showEnterToast('Saved. Continue to payment');
                 }
 
