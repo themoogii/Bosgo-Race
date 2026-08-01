@@ -1233,6 +1233,80 @@
         text-transform: none;
     }
 
+    body.enter-body .account-toggle {
+        grid-column: 1 / -1;
+        display: grid;
+        gap: 10px;
+        padding: 14px 0 0;
+        border-top: 1px solid var(--white-02);
+        color: var(--white);
+        text-transform: none;
+    }
+
+    body.enter-body .account-toggle-label {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px !important;
+        color: var(--white) !important;
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+        text-transform: uppercase !important;
+        cursor: pointer;
+    }
+
+    body.enter-body .account-toggle-label input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    body.enter-body .account-switch {
+        position: relative;
+        width: 54px;
+        height: 28px;
+        flex: 0 0 auto;
+        border: 1px solid var(--white-03);
+        border-radius: 999px;
+        transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    body.enter-body .account-switch::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 4px;
+        left: 5px;
+        border-radius: 50%;
+        background: var(--white-06);
+        transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    body.enter-body .account-toggle-label input:checked + .account-switch {
+        border-color: var(--custom-red);
+        background: var(--custom-red);
+    }
+
+    body.enter-body .account-toggle-label input:checked + .account-switch::before {
+        background: var(--white);
+        transform: translateX(24px);
+    }
+
+    body.enter-body .account-copy {
+        display: none;
+        margin: 0;
+        color: var(--white-06);
+        font-size: 12px;
+        line-height: 1.3;
+        text-transform: none;
+    }
+
+    body.enter-body .account-toggle.is-active .account-copy {
+        display: block;
+    }
+
     body.enter-body .enter-actions {
         display: flex;
         justify-content: space-between;
@@ -1542,6 +1616,37 @@
 
         body.enter-body .runner-wide span {
             font-size: 10px;
+        }
+
+        body.enter-body .account-toggle {
+            gap: 6px;
+            padding-top: 8px;
+        }
+
+        body.enter-body .account-toggle-label {
+            gap: 10px !important;
+            font-size: 10px !important;
+        }
+
+        body.enter-body .account-switch {
+            width: 42px;
+            height: 22px;
+        }
+
+        body.enter-body .account-switch::before {
+            width: 14px;
+            height: 14px;
+            top: 3px;
+            left: 4px;
+        }
+
+        body.enter-body .account-toggle-label input:checked + .account-switch::before {
+            transform: translateX(19px);
+        }
+
+        body.enter-body .account-copy {
+            font-size: 9px;
+            line-height: 1.2;
         }
 
         body.enter-body .enter-actions {
@@ -1945,6 +2050,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <input type="hidden" name="form-name" value="bosgo-registration">
                     <input type="hidden" name="Registration ID" value="">
                     <input type="hidden" name="Payment Status" value="Pending">
+                    <input type="hidden" name="Create Bosgo Account" value="No">
                     <p class="netlify-hidden" aria-hidden="true">
                         <label>Do not fill this out<input name="bot-field" tabindex="-1" autocomplete="off"></label>
                     </p>
@@ -1988,6 +2094,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <label>Email address<input name="Email address" type="email" autocomplete="email" required></label>
                             <label>Birthday<input name="Birthday" type="date" required></label>
                             <label class="runner-wide">10K PB<input name="10K PB" type="text" inputmode="numeric" maxlength="8" placeholder="00:00:00" required><span>No official PB? Enter your best estimate.</span></label>
+                            <div class="account-toggle" data-account-toggle>
+                                <label class="account-toggle-label">
+                                    <span>Create Bosgo account</span>
+                                    <input type="checkbox" aria-describedby="accountToggleCopy">
+                                    <span class="account-switch" aria-hidden="true"></span>
+                                </label>
+                                <p class="account-copy" id="accountToggleCopy">We will use your registration email to send account setup after payment confirmation. No password is collected here.</p>
+                            </div>
                         </div>
                         <div class="enter-actions">
                             <button class="enter-button ghost" type="button" data-prev-step="1" onclick="return window.enterGoPrev?.(event, this)">BACK</button>
@@ -2593,6 +2707,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
 
+        const initAccountToggle = () => {
+            const toggleWrap = document.querySelector('[data-account-toggle]');
+            const toggleInput = toggleWrap?.querySelector('input[type="checkbox"]');
+            const accountField = enterForm?.querySelector('input[name="Create Bosgo Account"]');
+            if (!toggleWrap || !toggleInput || !accountField) return;
+
+            const syncToggle = () => {
+                const enabled = toggleInput.checked;
+                toggleWrap.classList.toggle('is-active', enabled);
+                accountField.value = enabled ? 'Yes' : 'No';
+            };
+
+            toggleInput.addEventListener('change', syncToggle);
+            syncToggle();
+        };
+
         const initNationalitySelector = () => {
             const selector = document.querySelector('[data-nationality-selector]');
             if (!selector || typeof enterNationalities === 'undefined') return;
@@ -2685,6 +2815,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         };
 
         initNationalitySelector();
+        initAccountToggle();
 
         document.addEventListener('click', (event) => {
             const nextButton = event.target.closest?.('.enter-card [data-next-step]');
