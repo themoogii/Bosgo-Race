@@ -2386,6 +2386,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const enterToast = document.querySelector('.enter-toast');
         const enterForm = document.querySelector('.enter-wizard');
         let activeEnterStep = 1;
+        let registrationSaved = false;
+        let registrationSaving = false;
         const enterProgressLabels = {
             1: '01/03',
             2: '02/03',
@@ -2462,17 +2464,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         const submitRegistrationToNetlify = async () => {
             if (!enterForm) throw new Error('Registration form not found');
+            if (registrationSaved || registrationSaving) return;
+            registrationSaving = true;
             ensureRegistrationId();
             const formData = new FormData(enterForm);
+            const isLocalPreview = location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(location.hostname);
 
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            });
+            try {
+                if (isLocalPreview) {
+                    await new Promise((resolve) => window.setTimeout(resolve, 350));
+                    registrationSaved = true;
+                    return;
+                }
 
-            if (!response.ok) {
-                throw new Error(`Netlify form failed with ${response.status}`);
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Netlify form failed with ${response.status}`);
+                }
+
+                registrationSaved = true;
+            } finally {
+                registrationSaving = false;
             }
         };
 
@@ -2514,7 +2531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return true;
         };
 
-        window.enterGoNext = (event, nextButton) => {
+        window.enterGoNext = async (event, nextButton) => {
             event?.preventDefault();
             event?.stopPropagation();
 
@@ -2523,7 +2540,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (!validateEnterStep(currentStep)) return false;
 
             nextButton.classList.add('is-confirming');
-            showEnterStep(nextStep);
+
+            try {
+                if (currentStep === 2 && nextStep === 3 && !registrationSaved) {
+                    showEnterToast('Saving registration');
+                    await submitRegistrationToNetlify();
+                    showEnterToast('Saved. Continue to payment');
+                }
+
+                showEnterStep(nextStep);
+            } catch (error) {
+                console.error(error);
+                shakeEnterCard();
+                showEnterToast('Could not save. Try again');
+            }
+
             window.setTimeout(() => {
                 nextButton.classList.remove('is-confirming');
             }, 180);
@@ -2676,26 +2707,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             window.enterGoPrev(event, previousButton);
         }, true);
 
-        document.querySelector('.enter-button.payment')?.addEventListener('click', async (event) => {
-            event.preventDefault();
+        document.querySelector('.enter-button.payment')?.addEventListener('click', (event) => {
             const paymentButton = event.currentTarget;
-            if (!validateEnterStep(1) || !validateEnterStep(2)) return;
-
             paymentButton.classList.add('is-confirming');
-            showEnterToast('Saving registration');
-
-            try {
-                await submitRegistrationToNetlify();
-                showEnterToast('Saved. Opening payment');
-                window.setTimeout(() => {
-                    window.location.href = paymentButton.href;
-                }, 450);
-            } catch (error) {
-                console.error(error);
-                paymentButton.classList.remove('is-confirming');
-                shakeEnterCard();
-                showEnterToast('Could not save. Try again');
-            }
+            showEnterToast('Opening 7K Club payment');
+            window.setTimeout(() => paymentButton.classList.remove('is-confirming'), 900);
         });
 
 
