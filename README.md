@@ -28,11 +28,15 @@ Because the animation/media assets are loaded from `piranhabar.ie` and CDNs, an 
 
 ## Google Sheets registration tracker
 
-The register page can mirror Netlify form submissions into Google Sheets.
+The register page can mirror Netlify form submissions into this Google Sheet:
 
-1. Create a new Google Sheet.
-2. In the Sheet, open `Extensions -> Apps Script`.
-3. Paste the code from `google-sheets-apps-script.js`.
+```text
+https://docs.google.com/spreadsheets/d/1h1lG9jyI4UNB8ewzbS6B87kInl--Q8CpBWW2nVqy0Jo/edit
+```
+
+1. In the Sheet, open `Extensions -> Apps Script`.
+2. Paste the code from `google-sheets-apps-script.js`.
+3. Save the Apps Script project.
 4. Click `Deploy -> New deployment`.
 5. Choose `Web app`.
 6. Set `Execute as` to `Me`.

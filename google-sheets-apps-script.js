@@ -1,3 +1,4 @@
+const SPREADSHEET_ID = '1h1lG9jyI4UNB8ewzbS6B87kInl--Q8CpBWW2nVqy0Jo';
 const SHEET_NAME = 'Registrations';
 
 const HEADERS = [
@@ -30,7 +31,7 @@ function doPost(e) {
 }
 
 function getRegistrationSheet_() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
