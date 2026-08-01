@@ -1035,6 +1035,19 @@
         gap: 12px;
     }
 
+    body.enter-body .form-section-label {
+        grid-column: 1 / -1;
+        margin: 4px 0 -2px;
+        color: var(--custom-red);
+        font-size: 11px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    body.enter-body .form-section-label:first-child {
+        margin-top: 0;
+    }
+
     body.enter-body .runner-grid label {
         display: flex;
         flex-direction: column;
@@ -1546,9 +1559,14 @@
 
         body.enter-body .runner-grid {
             grid-template-columns: 1fr;
-            gap: 8px;
+            gap: 7px;
             width: 100%;
             min-width: 0;
+        }
+
+        body.enter-body .form-section-label {
+            margin: 6px 0 -1px;
+            font-size: 9px;
         }
 
         body.enter-body .runner-grid label,
@@ -2074,6 +2092,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <section class="enter-step" data-enter-step="2" aria-label="Runner information">
                         <h2>WHO’S ENTERING?</h2>
                         <div class="runner-grid">
+                            <div class="form-section-label">Identity</div>
                             <label>First name<input name="First name" type="text" autocomplete="given-name" required></label>
                             <label>Last name<input name="Last name" type="text" autocomplete="family-name" required></label>
                             <label class="nationality-field">Nationality
@@ -2090,9 +2109,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </div>
                                 </div>
                             </label>
+                            <label>Birthday<input name="Birthday" type="date" required></label>
+                            <div class="form-section-label">Contact</div>
                             <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required></label>
                             <label>Email address<input name="Email address" type="email" autocomplete="email" required></label>
-                            <label>Birthday<input name="Birthday" type="date" required></label>
+                            <div class="form-section-label">Performance</div>
                             <label class="runner-wide">10K PB<input name="10K PB" type="text" inputmode="numeric" maxlength="8" placeholder="00:00:00" required><span>No official PB? Enter your best estimate.</span></label>
                             <div class="account-toggle" data-account-toggle>
                                 <label class="account-toggle-label">

@@ -610,25 +610,54 @@
         main.race-day-page .race-day-itinerary li {
             align-items: flex-start;
             flex-direction: column;
-            gap: 12px;
-            padding: 20px 0;
+            gap: 8px;
+            padding: 18px 0;
+            position: relative;
+        }
+
+        main.race-day-page .race-day-itinerary li::before {
+            content: "";
+            position: absolute;
+            top: 18px;
+            bottom: -18px;
+            left: 64px;
+            width: 1px;
+            background: rgba(255,255,255,0.32);
+        }
+
+        main.race-day-page .race-day-itinerary li:last-child::before {
+            bottom: 18px;
+        }
+
+        main.race-day-page .race-day-itinerary li.is-race-section,
+        main.race-day-page .race-day-itinerary li.is-final-section,
+        main.race-day-page .race-day-itinerary li.is-party-section {
+            padding-top: 26px;
         }
 
         main.race-day-page .race-day-item-main {
             align-items: flex-start;
-            flex-direction: column;
-            gap: 10px;
+            flex-direction: row;
+            gap: 14px;
             width: 100%;
         }
 
         main.race-day-page .race-day-time {
-            min-width: 0;
-            font-size: clamp(18px, 5.8vw, 24px) !important;
+            flex: 0 0 56px;
+            min-width: 56px;
+            font-size: clamp(15px, 4.6vw, 20px) !important;
+            position: sticky;
+            left: 18px;
+            z-index: 1;
+        }
+
+        main.race-day-page .race-day-item-copy {
+            padding-left: 14px;
         }
 
         main.race-day-page .race-day-itinerary h3 {
-            font-size: clamp(18px, 6vw, 26px) !important;
-            line-height: 0.95 !important;
+            font-size: clamp(15px, 4.8vw, 21px) !important;
+            line-height: 1 !important;
             overflow-wrap: anywhere;
         }
 
@@ -637,6 +666,7 @@
         }
 
         main.race-day-page .race-day-location {
+            margin-left: 70px;
             white-space: normal;
             font-size: 12px !important;
             line-height: 1.1 !important;
@@ -987,82 +1017,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </header>
 
         <ul class="race-day-itinerary" aria-label="Race day itinerary">
-            <li>
+            <li class="is-admin-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">08:00</span>
                     <div class="race-day-item-copy">
                         <h3>CHECK-IN</h3>
-                        <p class="race-day-description">All participants must complete registration and check-in process.</p>
+                        <p class="race-day-description">Race pack pickup, bib check and final entry confirmation.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Registration Area</span>
             </li>
-            <li>
+            <li class="is-race-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">09:00</span>
                     <div class="race-day-item-copy">
                         <h3>Women 10K Qualifier</h3>
-                        <p class="race-day-description">Women's 10K qualifying round begins.</p>
+                        <p class="race-day-description">Qualifier stage for women. The fastest move forward.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Main Track</span>
             </li>
-            <li>
+            <li class="is-race-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">10:30</span>
                     <div class="race-day-item-copy">
                         <h3>Men 10K Qualifier</h3>
-                        <p class="race-day-description">Men's 10K qualifying round begins.</p>
+                        <p class="race-day-description">Qualifier stage for men. The fastest move forward.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Main Track</span>
             </li>
-            <li>
+            <li class="is-reset-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">12:00</span>
                     <div class="race-day-item-copy">
                         <h3>THE MILE BETWEEN (Beer Mile)</h3>
-                        <p class="race-day-description">Special beer mile event - a fun challenge between races!</p>
+                        <p class="race-day-description">A short reset between the qualifier and final.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Track</span>
             </li>
-            <li>
+            <li class="is-final-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">13:00</span>
                     <div class="race-day-item-copy">
                         <h3>Women 3K Final</h3>
-                        <p class="race-day-description">Women's 3K final race. Championship contenders compete.</p>
+                        <p class="race-day-description">Final stage for qualified women.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Main Track</span>
             </li>
-            <li>
+            <li class="is-final-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">13:40</span>
                     <div class="race-day-item-copy">
                         <h3>Men 3K Final</h3>
-                        <p class="race-day-description">Men's 3K final race. Championship contenders compete.</p>
+                        <p class="race-day-description">Final stage for qualified men.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Main Track</span>
             </li>
-            <li>
+            <li class="is-ceremony-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">14:30</span>
                     <div class="race-day-item-copy">
                         <h3>Proof Ceremony</h3>
-                        <p class="race-day-description">Awards presentation and victory celebration.</p>
+                        <p class="race-day-description">Finish proof, results and podium moment.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Victory Podium</span>
             </li>
-            <li>
+            <li class="is-party-section">
                 <div class="race-day-item-main">
                     <span class="race-day-time">19:00</span>
                     <div class="race-day-item-copy">
                         <h3>THE AFTER Party</h3>
-                        <p class="race-day-description">Celebrate the day with fellow athletes and spectators!</p>
+                        <p class="race-day-description">The final gathering after the race is done.</p>
                     </div>
                 </div>
                 <span class="race-day-location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg>Event Center</span>

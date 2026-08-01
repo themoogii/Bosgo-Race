@@ -356,6 +356,38 @@
         color: var(--white) !important;
     }
 
+    .contact .content_categories:not(.people) > li {
+        transition: padding-left 0.28s ease, background-color 0.28s ease;
+    }
+
+    .contact .content_categories:not(.people) > li:hover,
+    .contact .content_categories:not(.people) > li:focus-within {
+        padding-left: 16px;
+        background-color: rgba(9,9,9,0.06);
+    }
+
+    .contact .partner-status {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 24px;
+        padding: 4px 10px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        color: var(--black);
+        font-size: 11px;
+        line-height: 1;
+        text-transform: uppercase;
+        opacity: 0.62;
+        transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    .contact .content_categories:not(.people) > li:hover .partner-status,
+    .contact .content_categories:not(.people) > li:focus-within .partner-status {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
     main.enter-page .entry-form-section,
     main.race-day-page .race-map-section {
         background: var(--black);
@@ -491,6 +523,23 @@
 
         .content_big_button .big_button .nav-symbol-7k {
             color: var(--custom-red) !important;
+        }
+
+        .contact .content_categories:not(.people) > li {
+            gap: 8px;
+        }
+
+        .contact .content_categories:not(.people) > li:hover,
+        .contact .content_categories:not(.people) > li:focus-within {
+            padding-left: 0;
+            background-color: transparent;
+        }
+
+        .contact .partner-status {
+            align-self: flex-start;
+            min-height: 20px;
+            padding: 3px 8px;
+            font-size: 9px;
         }
 
         footer .content_contact .content_w {
@@ -760,6 +809,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<li class="row">
 								<!--Heading-->
 								<h3>Title Sponsor</h3>
+								<span class="partner-status">Available</span>
 								<!--Link-->
 								<div class="content_links">
 									<a href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
@@ -768,6 +818,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<li class="row">
 								<!--Heading-->
 								<h3>Route Partner</h3>
+								<span class="partner-status">Available</span>
 								<!--Link-->
 								<div class="content_links">
 									<a href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
@@ -776,6 +827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<li class="row">
 								<!--Heading-->
 								<h3>Aid Station</h3>
+								<span class="partner-status">Available</span>
 								<!--Link-->
 								<div class="content_links">
 									<a href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
@@ -784,6 +836,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<li class="row">
 								<!--Heading-->
 								<h3>Media Partner</h3>
+								<span class="partner-status">Available</span>
 								<!--Link-->
 								<div class="content_links">
 									<a href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
@@ -792,6 +845,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<li class="row">
 								<!--Heading-->
 								<h3>Community Partner</h3>
+								<span class="partner-status">Open</span>
 								<!--Link-->
 								<div class="content_links">
 									<a href="mailto:the.7k.club@gmail.com">the.7k.club@gmail.com</a>
